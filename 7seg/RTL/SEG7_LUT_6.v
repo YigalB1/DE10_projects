@@ -1,0 +1,25 @@
+//module SEG7_LUT_6 (	oSEG0,oSEG1,oSEG2,oSEG3,oSEG4,oSEG5,iDIG0,iDIG1,iDIG2,iDIG3,iDIG4,iDIG5 );
+module SEG7_LUT_6 (	
+
+//input	[23:0]	iDIG;
+input	[3:0]	iDIG0,iDIG1,iDIG2,iDIG3,iDIG4,iDIG5,
+output	[6:0]	oSEG0,oSEG1,oSEG2,oSEG3,oSEG4,oSEG5
+);
+
+SEG7_LUT	u0	(	oSEG0,iDIG0	);
+SEG7_LUT	u1	(	oSEG1,iDIG1	);
+SEG7_LUT	u2	(	oSEG2,iDIG2	);
+SEG7_LUT	u3	(	oSEG3,iDIG3	);
+SEG7_LUT	u4	(	oSEG4,iDIG4 );
+SEG7_LUT	u5	(	oSEG5,iDIG5	);
+
+/*
+SEG7_LUT	u0	(	oSEG0,iDIG[3:0]		);
+SEG7_LUT	u1	(	oSEG1,iDIG[7:4]		);
+SEG7_LUT	u2	(	oSEG2,iDIG[11:8]	);
+SEG7_LUT	u3	(	oSEG3,iDIG[15:12]	);
+SEG7_LUT	u4	(	oSEG4,iDIG[19:16]	);
+SEG7_LUT	u5	(	oSEG5,iDIG[23:20]	);
+*/
+
+endmodule
