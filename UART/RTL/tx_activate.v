@@ -1,18 +1,11 @@
 module tx_activate(
 input clk,
 input rst,
-output reg iTx,
-output reg [7:0] tx_data
+output reg iTx_DV,  // data to transmitter is valid
+output reg [7:0] tx_data, // data to the transmitter
+input o_Tx_Done // transmitted finished 
+// can be used to trigger another trasmition
 );
-
-/*
-always @(posedge clk)
-begin
-	iTx=0;
-	tx_data=55;
-end
-*/
-
 
 
   parameter IDLE   = 3'b000;
@@ -29,8 +22,6 @@ end
   always @(posedge clk or posedge rst) begin //1
     if (rst) begin //2
       current_state <= IDLE; 
-      //iTx=0;
-      //tx_data=0;
     end else begin //2
       current_state <= next_state;
     end //2
@@ -49,21 +40,29 @@ end
     case (current_state)
       IDLE: begin
         next_state = STATE1; 
-		  iTx=0;
-		  tx_data=0;
+		    iTx_DV=0;
+		    tx_data=0;
       end
+
       STATE1: begin
         next_state = STATE2; 
-		  iTx =1;
-		  tx_data=55;
+		    iTx_DV =1;
+		    tx_data=55;
       end
+
       STATE2: begin
-        next_state = STATE2;  // stay here until TX byte is transmitted. TBD.
-		  iTx =0;
+        iTx_DV =0;
+        if ( o_Tx_Done) begin
+          next_state = STATE3;
+        end else begin
+          next_state = STATE2;  // stay here until TX byte is transmitted. TBD.
+        end 
+		  
       end
       STATE3: begin
-        next_state = IDLE; 
+        next_state = STATE3; // stay here, wait to recieve 
       end
+      
       default: begin
         next_state = IDLE; 
       end

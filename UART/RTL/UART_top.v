@@ -13,10 +13,7 @@
 /* ***************** Module ************/
 module UART_top(
 
-
-//`ifdef ENABLE_CLOCK1
-input   		MAX10_CLK1_50,
-//`endif
+input	MAX10_CLK1_50,
 
 /*
 	output		     [7:0]		HEX0,
@@ -26,15 +23,11 @@ input   		MAX10_CLK1_50,
 	output		     [7:0]		HEX4,
 	output		     [7:0]		HEX5,
 */
-
-	input 		     [1:0]		KEY
-
-
+	input 		     [1:0]		KEY,
 //	output		     [9:0]		LEDR,
-
-
 //	input 		     [9:0]		SW,
-
+	input	iRx_serial,
+	output	o_Tx_Serial
 );
 
 
@@ -42,10 +35,10 @@ wire Rx_valid;
 wire [7:0] rx_data;
 
 wire iTx_DV; // data to transmitis valid. start transmitting
-wire iRx_serial; // the serial stream
+//wire iRx_serial; // the serial stream
 wire [7:0] i_Tx_Byte;
 wire o_Tx_Active;
-wire o_Tx_Serial;
+//wire o_Tx_Serial;
 wire o_Tx_Done;
 reg reset;
 
@@ -54,11 +47,11 @@ reset = ~KEY[0];
 end
 
 //always @(*) begin
-assign iRx_serial=o_Tx_Serial;
+//assign iRx_serial=o_Tx_Serial;
 //end
 
 
 UART my_uart(MAX10_CLK1_50,KEY[0],iRx_serial,Rx_valid,rx_data,iTx_DV,i_Tx_Byte,o_Tx_Active,o_Tx_Serial,o_Tx_Done);
-tx_activate tx_act(MAX10_CLK1_50,reset,iTx_DV,i_Tx_Byte);
+tx_activate tx_act(MAX10_CLK1_50,reset,iTx_DV,i_Tx_Byte,o_Tx_Done);
 
 endmodule

@@ -13,7 +13,9 @@ module UART(
     output o_Tx_Done
 );
 
-uart_rx uart_r(MAX10_CLK1_50,iRx_serial,Rx_valid,rx_data);
+// uart_rx uart_r(MAX10_CLK1_50,iRx_serial,Rx_valid,rx_data); 
+// for testing, loop back the tx into rx
+uart_rx uart_r(MAX10_CLK1_50,o_Tx_Serial,Rx_valid,rx_data);
 uart_tx uart_t(MAX10_CLK1_50,iTx_DV,i_Tx_Byte,o_Tx_Active,o_Tx_Serial,o_Tx_Done);
 
 

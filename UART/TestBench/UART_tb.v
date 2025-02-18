@@ -14,16 +14,18 @@ initial begin
 
 
 clk_tb=0;
-key=2'b00;
+key[0]=1;
+
 
  // *** Asserting RESET by pressing Key ***
  #20;
-key[0]=1;
- #20;
 key[0]=0;
  #20;
+key[0]=1;
+ #20;
 
 
+#100000;
 #100000;
 
 
