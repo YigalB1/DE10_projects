@@ -1,16 +1,16 @@
-C:/Users/DNLD/Documents/Projects/DE10_projects/7seg/RTL/switches_read.v {1 {vlog -work work -stats=none C:/Users/DNLD/Documents/Projects/DE10_projects/7seg/RTL/switches_read.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module switches_read
-
-Top level modules:
-	switches_read
-
-} {} {}} C:/Users/DNLD/Documents/Projects/DE10_projects/7seg/RTL/seven_seg_top.v {1 {vlog -work work -stats=none C:/Users/DNLD/Documents/Projects/DE10_projects/7seg/RTL/seven_seg_top.v
+C:/Users/DNLD/Documents/Projects/DE10_projects/7seg/RTL/seven_seg_top.v {1 {vlog -work work -stats=none C:/Users/DNLD/Documents/Projects/DE10_projects/7seg/RTL/seven_seg_top.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module seven_seg_top
 
 Top level modules:
 	seven_seg_top
+
+} {} {}} C:/Users/DNLD/Documents/Projects/DE10_projects/7seg/RTL/switches_read.v {1 {vlog -work work -stats=none C:/Users/DNLD/Documents/Projects/DE10_projects/7seg/RTL/switches_read.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module switches_read
+
+Top level modules:
+	switches_read
 
 } {} {}} C:/Users/DNLD/Documents/Projects/DE10_projects/7seg/Testbench/seven_seg_tb.v {1 {vlog -work work -stats=none {C:\Users\DNLD\Documents\Projects\DE10_projects\7seg\Testbench\seven_seg_tb.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
