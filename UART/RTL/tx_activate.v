@@ -3,12 +3,14 @@ input clk,
 input rst,
 output reg iTx_DV,  // data to transmitter is valid
 output reg [7:0] tx_data, // data to the transmitter
-input o_Tx_Done // transmitted finished 
+input o_Tx_Done, // transmitted finished 
 // can be used to trigger another trasmition
+input Rx_valid // the recieved byte is valid
+// tp enable next bye transmit
 );
 
 
-  parameter IDLE   = 3'b000;
+  parameter STATE0   = 3'b000;
   parameter STATE1 = 3'b001;
   parameter STATE2 = 3'b010;
   parameter STATE3 = 3'b011;
@@ -21,7 +23,7 @@ input o_Tx_Done // transmitted finished
 
   always @(posedge clk or posedge rst) begin //1
     if (rst) begin //2
-      current_state <= IDLE; 
+      current_state <= STATE0; 
     end else begin //2
       current_state <= next_state;
     end //2
@@ -38,33 +40,55 @@ input o_Tx_Done // transmitted finished
 
   always @(*) begin
     case (current_state)
-      IDLE: begin
+      STATE0: begin
+        // after reset
         next_state = STATE1; 
 		    iTx_DV=0;
 		    tx_data=0;
       end
 
       STATE1: begin
+        // Inc Tx Data
         next_state = STATE2; 
-		    iTx_DV =1;
-		    tx_data=55;
+		    iTx_DV =0;
+		    tx_data=tx_data+1;
       end
 
       STATE2: begin
+        // create Tx data
+        next_state = STATE3; 
+		    iTx_DV =1;
+		    //tx_data=55;
+      end
+
+      STATE3: begin
+        // wait here till data is transmitted
+        // Go to 
+
         iTx_DV =0;
         if ( o_Tx_Done) begin
-          next_state = STATE3;
+          next_state = STATE4;
         end else begin
-          next_state = STATE2;  // stay here until TX byte is transmitted. TBD.
+          next_state = STATE3;  // stay here until TX byte is transmitted. TBD.
         end 
 		  
       end
-      STATE3: begin
-        next_state = STATE3; // stay here, wait to recieve 
+      STATE4: begin
+        next_state = STATE1;
+  /*      
+        if (Rx_valid) begin
+          // byte receiving is done
+          next_state = STATE1;
+        end else begin
+          next_state = STATE4; // stay here, wait to recieve 
+        end
+*/
+
+
       end
-      
+
       default: begin
-        next_state = IDLE; 
+        next_state = STATE0; 
       end
     endcase
   end

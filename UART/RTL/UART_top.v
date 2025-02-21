@@ -31,7 +31,7 @@ input	MAX10_CLK1_50,
 );
 
 
-wire Rx_valid;
+wire Rx_valid; // the recieved byte is valid
 wire [7:0] rx_data;
 
 wire iTx_DV; // data to transmitis valid. start transmitting
@@ -52,6 +52,15 @@ end
 
 
 UART my_uart(MAX10_CLK1_50,KEY[0],iRx_serial,Rx_valid,rx_data,iTx_DV,i_Tx_Byte,o_Tx_Active,o_Tx_Serial,o_Tx_Done);
-tx_activate tx_act(MAX10_CLK1_50,reset,iTx_DV,i_Tx_Byte,o_Tx_Done);
+
+// Stage 1: 
+// this simulates the case of transmitting into the UART.
+// inside the UART, a patch was made to xonnect the TX into the RX, 
+// in order to see if transmiltting into the reciever is working
+tx_activate tx_act(MAX10_CLK1_50,reset,iTx_DV,i_Tx_Byte,o_Tx_Done,Rx_valid);
+
+
+// stage 2: 
+// Transmit a different data .. TBD.. 
 
 endmodule

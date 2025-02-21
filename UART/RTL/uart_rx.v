@@ -18,7 +18,7 @@ module uart_rx
   (
    input        i_Clock,
    input        i_Rx_Serial,
-   output       o_Rx_DV,
+   output       o_Rx_DV, // data out is valid
    output [7:0] o_Rx_Byte
    );
     
