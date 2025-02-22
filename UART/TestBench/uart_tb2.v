@@ -1,15 +1,18 @@
-// used for simulation without host
+// used for simulation towards host usage
+// host is sending a byte, which is recieved
+// then triggerring send back to host
 
 
 `timescale 1ns/1ns
 
-module UART_tb ();
+module UART_tb2 ();
 reg clk_tb;
 reg [1:0] key;
+wire [9:0] ledr;
 reg iRx_serial;
 wire o_Tx_Serial;
 
-UART_top DUT(clk_tb,key,iRx_serial,o_Tx_Serial);
+UART_top DUT(clk_tb,key,ledr,iRx_serial,o_Tx_Serial);
 
 // Set thye clock
 always begin
@@ -38,14 +41,35 @@ initial begin
 
     $display ("Starting TB ");
     clk_tb=0;
-    key[0]=1;
+    key[1]=0;
+    #10;
+    
+    // check led & key[1]
+    key[1]=1;
+    #10;
+    key[1]=0;
+    #10;
+
+
+    
+
+
 
     // *** Asserting RESET by pressing Key ***
+    key[0]=1; // active low
     #20;
     key[0]=0;
     #20;
     key[0]=1;
     #20;
+
+    // simulating the byte recieved 
+    force DUT.Rx_valid =1;
+    force DUT.rx_data=55;
+    #20;
+    release DUT.Rx_valid;
+    release DUT.rx_data;
+
 
   #100000;
   #100000;
