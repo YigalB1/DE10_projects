@@ -7,15 +7,12 @@ output reg iTx_DV,      // data to transmitter is valid
 output reg [7:0] tx_data, // data to the transmitter
 input o_Tx_Done         // transmitted finished 
 // can be used to trigger another trasmition
-
-
 );
 
 // this block will transmit to the host the same byte that was recieved
 // Like a loop back, following the Python sw on the host
 // in order to check massively the reliability
 // the trigger is Rx_Valid signal, when the receivong data is ready
-
 
   parameter STATE0 = 3'b000;
   parameter STATE1 = 3'b001;
@@ -27,6 +24,7 @@ input o_Tx_Done         // transmitted finished
   parameter STATE7 = 3'b111;
 
   reg [2:0] current_state, next_state;
+  reg [7:0] rx_inc_data;
 
   always @(posedge clk or posedge rst) begin //1
     if (rst) begin //2
@@ -52,6 +50,7 @@ input o_Tx_Done         // transmitted finished
         iTx_DV =0;
         if (Rx_valid) begin
             // byte was recieved
+            rx_inc_data=Rx_data+1;
             next_state = STATE1;  
         end else begin
             next_state = STATE0; 
@@ -61,14 +60,14 @@ input o_Tx_Done         // transmitted finished
       STATE1: begin
         // Reciever data is ready, starting the tx side
         next_state = STATE2; 
-		iTx_DV =1;
-		tx_data=Rx_data;
+		    iTx_DV =1;
+		    tx_data=rx_inc_data;
       end
 
       STATE2: begin
         // create Tx data
         next_state = STATE3; 
-		iTx_DV =0;
+		    iTx_DV =0;
       end
 
       STATE3: begin
