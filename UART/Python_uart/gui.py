@@ -12,6 +12,7 @@ def submit_action():
     #print("Here 1")
     if com_port is None:
         print("Failed to open the FTDI port")
+        button.bg="green"
     print(com_port)
 
 
