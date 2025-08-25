@@ -1,0 +1,1186 @@
+Analysis & Synthesis report for PE2526
+Sun Aug 24 18:34:31 2025
+Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. State Machine - |PE_FPGA_top|tx_repeater:tx_rpt|current_state
+ 10. State Machine - |PE_FPGA_top|main_control:main_ctrl|uart_ctrl:uart_ctrl|state
+ 11. State Machine - |PE_FPGA_top|memories:memories|current_state
+ 12. Registers Removed During Synthesis
+ 13. Removed Registers Triggering Further Register Optimizations
+ 14. General Register Statistics
+ 15. Inverted Register Statistics
+ 16. Registers Packed Into Inferred Megafunctions
+ 17. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 18. Source assignments for memories:memories|ram_test:u1|altsyncram:ram_rtl_0|altsyncram_mcd1:auto_generated
+ 19. Source assignments for memories:memories|ram_test:u2|altsyncram:ram_rtl_0|altsyncram_mcd1:auto_generated
+ 20. Source assignments for memories:memories|ram_test:u3|altsyncram:ram_rtl_0|altsyncram_mcd1:auto_generated
+ 21. Parameter Settings for User Entity Instance: memories:memories
+ 22. Parameter Settings for User Entity Instance: uart_top:uart|uart_tx:tx
+ 23. Parameter Settings for User Entity Instance: control:ctrl
+ 24. Parameter Settings for User Entity Instance: tx_repeater:tx_rpt
+ 25. Parameter Settings for Inferred Entity Instance: memories:memories|ram_test:u1|altsyncram:ram_rtl_0
+ 26. Parameter Settings for Inferred Entity Instance: memories:memories|ram_test:u2|altsyncram:ram_rtl_0
+ 27. Parameter Settings for Inferred Entity Instance: memories:memories|ram_test:u3|altsyncram:ram_rtl_0
+ 28. altsyncram Parameter Settings by Entity Instance
+ 29. Port Connectivity Checks: "tx_repeater:tx_rpt"
+ 30. Port Connectivity Checks: "uart_top:uart|uart_rx:rx"
+ 31. Port Connectivity Checks: "memories:memories"
+ 32. Post-Synthesis Netlist Statistics for Top Partition
+ 33. Elapsed Time Per Partition
+ 34. Analysis & Synthesis Messages
+ 35. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Aug 24 18:34:31 2025          ;
+; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
+; Revision Name                      ; PE2526                                         ;
+; Top-level Entity Name              ; PE_FPGA_top                                    ;
+; Family                             ; MAX 10                                         ;
+; Total logic elements               ; 229                                            ;
+;     Total combinational functions  ; 221                                            ;
+;     Dedicated logic registers      ; 144                                            ;
+; Total registers                    ; 144                                            ;
+; Total pins                         ; 17                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 98,304                                         ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
+; UFM blocks                         ; 0                                              ;
+; ADC blocks                         ; 0                                              ;
++------------------------------------+------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M50DAF484C6GES   ;                    ;
+; Top-level entity name                                            ; PE_FPGA_top        ; PE2526             ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Maximum Number of Registers Created from Uninferred RAMs         ; 0                  ; -1 (Unlimited)     ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                            ; Library ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
+; ../RTL/control/uart_ctrl.v       ; yes             ; User Verilog HDL File        ; C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/control/uart_ctrl.v          ;         ;
+; ../RTL/control/main_control.v    ; yes             ; User Verilog HDL File        ; C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/control/main_control.v       ;         ;
+; ../RTL/New UART/tx.v             ; yes             ; User Verilog HDL File        ; C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/tx.v                ;         ;
+; ../RTL/New UART/rx.v             ; yes             ; User Verilog HDL File        ; C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/rx.v                ;         ;
+; ../RTL/New UART/uart_top.v       ; yes             ; User Verilog HDL File        ; C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/uart_top.v          ;         ;
+; ../RTL/ram_test.v                ; yes             ; User Verilog HDL File        ; C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/ram_test.v                   ;         ;
+; ../RTL/memories.v                ; yes             ; User Verilog HDL File        ; C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/memories.v                   ;         ;
+; ../RTL/tx_repeater.v             ; yes             ; User Verilog HDL File        ; C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/tx_repeater.v                ;         ;
+; ../RTL/PE_FPGA_top.v             ; yes             ; User Verilog HDL File        ; C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v                ;         ;
+; ../RTL/control.v                 ; yes             ; User Verilog HDL File        ; C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/control.v                    ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf                ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratix_ram_block.inc         ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.inc                   ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_decode.inc                ;         ;
+; aglobal231.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/aglobal231.inc                ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/a_rdenreg.inc                 ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altrom.inc                    ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altram.inc                    ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altdpram.inc                  ;         ;
+; db/altsyncram_mcd1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Synthesis/db/altsyncram_mcd1.tdf ;         ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                       ;
++---------------------------------------------+---------------------+
+; Resource                                    ; Usage               ;
++---------------------------------------------+---------------------+
+; Estimated Total logic elements              ; 229                 ;
+;                                             ;                     ;
+; Total combinational functions               ; 221                 ;
+; Logic element usage by number of LUT inputs ;                     ;
+;     -- 4 input functions                    ; 76                  ;
+;     -- 3 input functions                    ; 13                  ;
+;     -- <=2 input functions                  ; 132                 ;
+;                                             ;                     ;
+; Logic elements by mode                      ;                     ;
+;     -- normal mode                          ; 124                 ;
+;     -- arithmetic mode                      ; 97                  ;
+;                                             ;                     ;
+; Total registers                             ; 144                 ;
+;     -- Dedicated logic registers            ; 144                 ;
+;     -- I/O registers                        ; 0                   ;
+;                                             ;                     ;
+; I/O pins                                    ; 17                  ;
+; Total memory bits                           ; 98304               ;
+;                                             ;                     ;
+; Embedded Multiplier 9-bit elements          ; 0                   ;
+;                                             ;                     ;
+; Maximum fan-out node                        ; MAX10_CLK1_50~input ;
+; Maximum fan-out                             ; 240                 ;
+; Total fan-out                               ; 2373                ;
+; Average fan-out                             ; 4.79                ;
++---------------------------------------------+---------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                 ;
++----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                            ; Entity Name     ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |PE_FPGA_top                                 ; 221 (1)             ; 144 (0)                   ; 98304       ; 0          ; 0            ; 0       ; 0         ; 17   ; 0            ; 0          ; |PE_FPGA_top                                                                                   ; PE_FPGA_top     ; work         ;
+;    |control:ctrl|                            ; 56 (56)             ; 41 (41)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|control:ctrl                                                                      ; control         ; work         ;
+;    |main_control:main_ctrl|                  ; 28 (0)              ; 22 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|main_control:main_ctrl                                                            ; main_control    ; work         ;
+;       |uart_ctrl:uart_ctrl|                  ; 28 (28)             ; 22 (22)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|main_control:main_ctrl|uart_ctrl:uart_ctrl                                        ; uart_ctrl       ; work         ;
+;    |memories:memories|                       ; 85 (85)             ; 49 (49)                   ; 98304       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|memories:memories                                                                 ; memories        ; work         ;
+;       |ram_test:u1|                          ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|memories:memories|ram_test:u1                                                     ; ram_test        ; work         ;
+;          |altsyncram:ram_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|memories:memories|ram_test:u1|altsyncram:ram_rtl_0                                ; altsyncram      ; work         ;
+;             |altsyncram_mcd1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|memories:memories|ram_test:u1|altsyncram:ram_rtl_0|altsyncram_mcd1:auto_generated ; altsyncram_mcd1 ; work         ;
+;       |ram_test:u2|                          ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|memories:memories|ram_test:u2                                                     ; ram_test        ; work         ;
+;          |altsyncram:ram_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|memories:memories|ram_test:u2|altsyncram:ram_rtl_0                                ; altsyncram      ; work         ;
+;             |altsyncram_mcd1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|memories:memories|ram_test:u2|altsyncram:ram_rtl_0|altsyncram_mcd1:auto_generated ; altsyncram_mcd1 ; work         ;
+;       |ram_test:u3|                          ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|memories:memories|ram_test:u3                                                     ; ram_test        ; work         ;
+;          |altsyncram:ram_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|memories:memories|ram_test:u3|altsyncram:ram_rtl_0                                ; altsyncram      ; work         ;
+;             |altsyncram_mcd1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|memories:memories|ram_test:u3|altsyncram:ram_rtl_0|altsyncram_mcd1:auto_generated ; altsyncram_mcd1 ; work         ;
+;    |uart_top:uart|                           ; 51 (0)              ; 32 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|uart_top:uart                                                                     ; uart_top        ; work         ;
+;       |uart_tx:tx|                           ; 51 (51)             ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|uart_top:uart|uart_tx:tx                                                          ; uart_tx         ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                  ;
++----------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
+; Name                                                                                         ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF  ;
++----------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
+; memories:memories|ram_test:u1|altsyncram:ram_rtl_0|altsyncram_mcd1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 1024         ; 32           ; 1024         ; 32           ; 32768 ; None ;
+; memories:memories|ram_test:u2|altsyncram:ram_rtl_0|altsyncram_mcd1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 1024         ; 32           ; 1024         ; 32           ; 32768 ; None ;
+; memories:memories|ram_test:u3|altsyncram:ram_rtl_0|altsyncram_mcd1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 1024         ; 32           ; 1024         ; 32           ; 32768 ; None ;
++----------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |PE_FPGA_top|tx_repeater:tx_rpt|current_state                                                                           ;
++----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+
+; Name                 ; current_state.STATE3 ; current_state.STATE2 ; current_state.STATE1 ; current_state.STATE0 ; current_state.STATE4 ;
++----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+
+; current_state.STATE0 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ;
+; current_state.STATE1 ; 0                    ; 0                    ; 1                    ; 1                    ; 0                    ;
+; current_state.STATE2 ; 0                    ; 1                    ; 0                    ; 1                    ; 0                    ;
+; current_state.STATE3 ; 1                    ; 0                    ; 0                    ; 1                    ; 0                    ;
+; current_state.STATE4 ; 0                    ; 0                    ; 0                    ; 1                    ; 1                    ;
++----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------+
+; State Machine - |PE_FPGA_top|main_control:main_ctrl|uart_ctrl:uart_ctrl|state                          ;
++--------------+--------------+--------------+--------------+--------------+--------------+--------------+
+; Name         ; state.STATE7 ; state.STATE4 ; state.STATE3 ; state.STATE2 ; state.STATE1 ; state.STATE0 ;
++--------------+--------------+--------------+--------------+--------------+--------------+--------------+
+; state.STATE0 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ;
+; state.STATE1 ; 0            ; 0            ; 0            ; 0            ; 1            ; 1            ;
+; state.STATE2 ; 0            ; 0            ; 0            ; 1            ; 0            ; 1            ;
+; state.STATE3 ; 0            ; 0            ; 1            ; 0            ; 0            ; 1            ;
+; state.STATE4 ; 0            ; 1            ; 0            ; 0            ; 0            ; 1            ;
+; state.STATE7 ; 1            ; 0            ; 0            ; 0            ; 0            ; 1            ;
++--------------+--------------+--------------+--------------+--------------+--------------+--------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |PE_FPGA_top|memories:memories|current_state                                                                                                                                                                        ;
++----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+
+; Name                 ; current_state.STATE7 ; current_state.STATE6 ; current_state.STATE5 ; current_state.STATE4 ; current_state.STATE3 ; current_state.STATE2 ; current_state.STATE1 ; current_state.STATE0 ; current_state.STATE8 ;
++----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+
+; current_state.STATE0 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ;
+; current_state.STATE1 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 1                    ; 0                    ;
+; current_state.STATE2 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 1                    ; 0                    ;
+; current_state.STATE3 ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 1                    ; 0                    ;
+; current_state.STATE4 ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ;
+; current_state.STATE5 ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ;
+; current_state.STATE6 ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ;
+; current_state.STATE7 ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ;
+; current_state.STATE8 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 1                    ;
++----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                           ;
++---------------------------------------------------------+----------------------------------------------------+
+; Register name                                           ; Reason for Removal                                 ;
++---------------------------------------------------------+----------------------------------------------------+
+; uart_top:uart|uart_tx:tx|shift_reg[9]                   ; Stuck at VCC due to stuck port data_in             ;
+; memories:memories|we3                                   ; Merged with memories:memories|we2                  ;
+; tx_repeater:tx_rpt|current_state.STATE1                 ; Lost fanout                                        ;
+; memories:memories|current_state.STATE6                  ; Lost fanout                                        ;
+; tx_repeater:tx_rpt|current_state~4                      ; Lost fanout                                        ;
+; tx_repeater:tx_rpt|current_state~5                      ; Lost fanout                                        ;
+; main_control:main_ctrl|uart_ctrl:uart_ctrl|state~4      ; Lost fanout                                        ;
+; main_control:main_ctrl|uart_ctrl:uart_ctrl|state~5      ; Lost fanout                                        ;
+; main_control:main_ctrl|uart_ctrl:uart_ctrl|state~6      ; Lost fanout                                        ;
+; memories:memories|current_state~4                       ; Lost fanout                                        ;
+; memories:memories|current_state~5                       ; Lost fanout                                        ;
+; memories:memories|current_state~6                       ; Lost fanout                                        ;
+; tx_repeater:tx_rpt|current_state.STATE2                 ; Stuck at GND due to stuck port data_in             ;
+; memories:memories|current_state.STATE4                  ; Stuck at GND due to stuck port data_in             ;
+; memories:memories|current_state.STATE7                  ; Stuck at GND due to stuck port data_in             ;
+; tx_repeater:tx_rpt|current_state.STATE4                 ; Lost fanout                                        ;
+; tx_repeater:tx_rpt|current_state.STATE0                 ; Lost fanout                                        ;
+; tx_repeater:tx_rpt|current_state.STATE3                 ; Lost fanout                                        ;
+; main_control:main_ctrl|uart_ctrl:uart_ctrl|state.STATE7 ; Lost fanout                                        ;
+; memories:memories|we1                                   ; Merged with memories:memories|mem_wrd_start        ;
+; memories:memories|current_state.STATE8                  ; Merged with memories:memories|current_state.STATE5 ;
+; memories:memories|rd                                    ; Stuck at GND due to stuck port data_in             ;
+; memories:memories|current_state.STATE5                  ; Stuck at GND due to stuck port data_in             ;
+; Total Number of Removed Registers = 23                  ;                                                    ;
++---------------------------------------------------------+----------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                   ;
++----------------------------------------------------+---------------------------+--------------------------------------------------------------+
+; Register name                                      ; Reason for Removal        ; Registers Removed due to This Register                       ;
++----------------------------------------------------+---------------------------+--------------------------------------------------------------+
+; memories:memories|current_state.STATE4             ; Stuck at GND              ; memories:memories|rd, memories:memories|current_state.STATE5 ;
+;                                                    ; due to stuck port data_in ;                                                              ;
+; tx_repeater:tx_rpt|current_state~4                 ; Lost Fanouts              ; tx_repeater:tx_rpt|current_state.STATE3                      ;
+; main_control:main_ctrl|uart_ctrl:uart_ctrl|state~4 ; Lost Fanouts              ; main_control:main_ctrl|uart_ctrl:uart_ctrl|state.STATE7      ;
++----------------------------------------------------+---------------------------+--------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 144   ;
+; Number of registers using Synchronous Clear  ; 30    ;
+; Number of registers using Synchronous Load   ; 16    ;
+; Number of registers using Asynchronous Clear ; 91    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 75    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; uart_top:uart|uart_tx:tx|tx             ; 2       ;
+; uart_top:uart|uart_tx:tx|shift_reg[6]   ; 1       ;
+; uart_top:uart|uart_tx:tx|shift_reg[5]   ; 1       ;
+; uart_top:uart|uart_tx:tx|shift_reg[4]   ; 1       ;
+; uart_top:uart|uart_tx:tx|shift_reg[7]   ; 1       ;
+; uart_top:uart|uart_tx:tx|shift_reg[8]   ; 1       ;
+; uart_top:uart|uart_tx:tx|shift_reg[2]   ; 1       ;
+; uart_top:uart|uart_tx:tx|shift_reg[1]   ; 1       ;
+; uart_top:uart|uart_tx:tx|shift_reg[0]   ; 1       ;
+; uart_top:uart|uart_tx:tx|shift_reg[3]   ; 1       ;
+; Total number of inverted registers = 10 ;         ;
++-----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                                   ;
++-----------------------------------------------+-----------------------------------------+------+
+; Register Name                                 ; Megafunction                            ; Type ;
++-----------------------------------------------+-----------------------------------------+------+
+; memories:memories|ram_test:u1|data_out[0..31] ; memories:memories|ram_test:u1|ram_rtl_0 ; RAM  ;
+; memories:memories|ram_test:u2|data_out[0..31] ; memories:memories|ram_test:u2|ram_rtl_0 ; RAM  ;
+; memories:memories|ram_test:u3|data_out[0..31] ; memories:memories|ram_test:u3|ram_rtl_0 ; RAM  ;
++-----------------------------------------------+-----------------------------------------+------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |PE_FPGA_top|main_control:main_ctrl|uart_ctrl:uart_ctrl|num_of_bytes[2] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |PE_FPGA_top|uart_top:uart|uart_tx:tx|bit_index[1]                      ;
+; 4:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |PE_FPGA_top|memories:memories|din[31]                                  ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 10 LEs               ; 30 LEs                 ; Yes        ; |PE_FPGA_top|memories:memories|addr[3]                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Source assignments for memories:memories|ram_test:u1|altsyncram:ram_rtl_0|altsyncram_mcd1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                         ;
++---------------------------------+--------------------+------+--------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                          ;
++---------------------------------+--------------------+------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Source assignments for memories:memories|ram_test:u2|altsyncram:ram_rtl_0|altsyncram_mcd1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                         ;
++---------------------------------+--------------------+------+--------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                          ;
++---------------------------------+--------------------+------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Source assignments for memories:memories|ram_test:u3|altsyncram:ram_rtl_0|altsyncram_mcd1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                         ;
++---------------------------------+--------------------+------+--------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                          ;
++---------------------------------+--------------------+------+--------------------------------------------+
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memories:memories ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; STATE0         ; 0000  ; Unsigned Binary                       ;
+; STATE1         ; 0001  ; Unsigned Binary                       ;
+; STATE2         ; 0010  ; Unsigned Binary                       ;
+; STATE3         ; 0011  ; Unsigned Binary                       ;
+; STATE4         ; 0100  ; Unsigned Binary                       ;
+; STATE5         ; 0101  ; Unsigned Binary                       ;
+; STATE6         ; 0110  ; Unsigned Binary                       ;
+; STATE7         ; 0111  ; Unsigned Binary                       ;
+; STATE8         ; 1000  ; Unsigned Binary                       ;
+; MEM_IN_SIZE    ; 2048  ; Signed Integer                        ;
+; OPCODE_SIZE    ; 256   ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: uart_top:uart|uart_tx:tx ;
++----------------+----------+-------------------------------------------+
+; Parameter Name ; Value    ; Type                                      ;
++----------------+----------+-------------------------------------------+
+; BAUD_RATE      ; 115200   ; Signed Integer                            ;
+; CLOCK_FREQ     ; 50000000 ; Signed Integer                            ;
+; BAUD_DIV       ; 434      ; Signed Integer                            ;
++----------------+----------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: control:ctrl        ;
++----------------+-------------------------------+-----------------+
+; Parameter Name ; Value                         ; Type            ;
++----------------+-------------------------------+-----------------+
+; DIVISOR        ; 11101110011010110010100000000 ; Unsigned Binary ;
++----------------+-------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: tx_repeater:tx_rpt ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; STATE0         ; 000   ; Unsigned Binary                        ;
+; STATE1         ; 001   ; Unsigned Binary                        ;
+; STATE2         ; 010   ; Unsigned Binary                        ;
+; STATE3         ; 011   ; Unsigned Binary                        ;
+; STATE4         ; 100   ; Unsigned Binary                        ;
+; STATE5         ; 101   ; Unsigned Binary                        ;
+; STATE6         ; 110   ; Unsigned Binary                        ;
+; STATE7         ; 111   ; Unsigned Binary                        ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: memories:memories|ram_test:u1|altsyncram:ram_rtl_0 ;
++------------------------------------+----------------------+-----------------------------------------+
+; Parameter Name                     ; Value                ; Type                                    ;
++------------------------------------+----------------------+-----------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                 ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                          ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                 ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                 ;
+; WIDTH_A                            ; 32                   ; Untyped                                 ;
+; WIDTHAD_A                          ; 10                   ; Untyped                                 ;
+; NUMWORDS_A                         ; 1024                 ; Untyped                                 ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                 ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                 ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                 ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                 ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                 ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                 ;
+; WIDTH_B                            ; 32                   ; Untyped                                 ;
+; WIDTHAD_B                          ; 10                   ; Untyped                                 ;
+; NUMWORDS_B                         ; 1024                 ; Untyped                                 ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                 ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                 ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                 ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                 ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                 ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                 ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                 ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                 ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                 ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                 ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                 ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                 ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                 ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                 ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                 ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                 ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                 ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                 ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                 ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                 ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                 ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                 ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                 ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                 ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                 ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                 ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                 ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                 ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                 ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                 ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                 ;
+; DEVICE_FAMILY                      ; MAX 10               ; Untyped                                 ;
+; CBXI_PARAMETER                     ; altsyncram_mcd1      ; Untyped                                 ;
++------------------------------------+----------------------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: memories:memories|ram_test:u2|altsyncram:ram_rtl_0 ;
++------------------------------------+----------------------+-----------------------------------------+
+; Parameter Name                     ; Value                ; Type                                    ;
++------------------------------------+----------------------+-----------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                 ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                          ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                 ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                 ;
+; WIDTH_A                            ; 32                   ; Untyped                                 ;
+; WIDTHAD_A                          ; 10                   ; Untyped                                 ;
+; NUMWORDS_A                         ; 1024                 ; Untyped                                 ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                 ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                 ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                 ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                 ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                 ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                 ;
+; WIDTH_B                            ; 32                   ; Untyped                                 ;
+; WIDTHAD_B                          ; 10                   ; Untyped                                 ;
+; NUMWORDS_B                         ; 1024                 ; Untyped                                 ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                 ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                 ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                 ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                 ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                 ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                 ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                 ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                 ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                 ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                 ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                 ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                 ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                 ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                 ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                 ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                 ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                 ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                 ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                 ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                 ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                 ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                 ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                 ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                 ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                 ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                 ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                 ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                 ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                 ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                 ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                 ;
+; DEVICE_FAMILY                      ; MAX 10               ; Untyped                                 ;
+; CBXI_PARAMETER                     ; altsyncram_mcd1      ; Untyped                                 ;
++------------------------------------+----------------------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: memories:memories|ram_test:u3|altsyncram:ram_rtl_0 ;
++------------------------------------+----------------------+-----------------------------------------+
+; Parameter Name                     ; Value                ; Type                                    ;
++------------------------------------+----------------------+-----------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                 ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                          ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                 ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                 ;
+; WIDTH_A                            ; 32                   ; Untyped                                 ;
+; WIDTHAD_A                          ; 10                   ; Untyped                                 ;
+; NUMWORDS_A                         ; 1024                 ; Untyped                                 ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                 ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                 ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                 ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                 ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                 ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                 ;
+; WIDTH_B                            ; 32                   ; Untyped                                 ;
+; WIDTHAD_B                          ; 10                   ; Untyped                                 ;
+; NUMWORDS_B                         ; 1024                 ; Untyped                                 ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                 ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                 ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                 ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                 ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                 ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                 ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                 ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                 ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                 ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                 ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                 ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                 ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                 ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                 ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                 ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                 ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                 ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                 ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                 ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                 ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                 ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                 ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                 ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                 ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                 ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                 ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                 ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                 ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                 ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                 ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                 ;
+; DEVICE_FAMILY                      ; MAX 10               ; Untyped                                 ;
+; CBXI_PARAMETER                     ; altsyncram_mcd1      ; Untyped                                 ;
++------------------------------------+----------------------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                               ;
++-------------------------------------------+----------------------------------------------------+
+; Name                                      ; Value                                              ;
++-------------------------------------------+----------------------------------------------------+
+; Number of entity instances                ; 3                                                  ;
+; Entity Instance                           ; memories:memories|ram_test:u1|altsyncram:ram_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                          ;
+;     -- WIDTH_A                            ; 32                                                 ;
+;     -- NUMWORDS_A                         ; 1024                                               ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                       ;
+;     -- WIDTH_B                            ; 32                                                 ;
+;     -- NUMWORDS_B                         ; 1024                                               ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                             ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                       ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                               ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                          ;
+; Entity Instance                           ; memories:memories|ram_test:u2|altsyncram:ram_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                          ;
+;     -- WIDTH_A                            ; 32                                                 ;
+;     -- NUMWORDS_A                         ; 1024                                               ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                       ;
+;     -- WIDTH_B                            ; 32                                                 ;
+;     -- NUMWORDS_B                         ; 1024                                               ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                             ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                       ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                               ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                          ;
+; Entity Instance                           ; memories:memories|ram_test:u3|altsyncram:ram_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                          ;
+;     -- WIDTH_A                            ; 32                                                 ;
+;     -- NUMWORDS_A                         ; 1024                                               ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                       ;
+;     -- WIDTH_B                            ; 32                                                 ;
+;     -- NUMWORDS_B                         ; 1024                                               ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                             ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                       ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                               ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                          ;
++-------------------------------------------+----------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "tx_repeater:tx_rpt"                                                                    ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; iTx_DV  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; tx_data ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; Port Connectivity Checks: "uart_top:uart|uart_rx:rx" ;
++---------------+-------+----------+-------------------+
+; Port          ; Type  ; Severity ; Details           ;
++---------------+-------+----------+-------------------+
+; baud_tick[0]  ; Input ; Info     ; Stuck at GND      ;
+; half_baud[31] ; Input ; Info     ; Stuck at GND      ;
++---------------+-------+----------+-------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "memories:memories"                                                                      ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; memA_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; memB_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; memC_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 17                          ;
+; cycloneiii_ff         ; 144                         ;
+;     CLR               ; 28                          ;
+;     ENA               ; 3                           ;
+;     ENA CLR           ; 55                          ;
+;     ENA CLR SLD       ; 8                           ;
+;     ENA SCLR          ; 1                           ;
+;     ENA SLD           ; 8                           ;
+;     SCLR              ; 29                          ;
+;     plain             ; 12                          ;
+; cycloneiii_lcell_comb ; 222                         ;
+;     arith             ; 97                          ;
+;         2 data inputs ; 97                          ;
+;     normal            ; 125                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 21                          ;
+;         2 data inputs ; 14                          ;
+;         3 data inputs ; 13                          ;
+;         4 data inputs ; 76                          ;
+; cycloneiii_ram_block  ; 96                          ;
+;                       ;                             ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 2.82                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+    Info: Processing started: Sun Aug 24 18:34:19 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PE2526 -c PE2526
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /users/dnld/documents/projects/de10_projects/pe_2526/rtl/control/uart_ctrl.v
+    Info (12023): Found entity 1: uart_ctrl File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/control/uart_ctrl.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/dnld/documents/projects/de10_projects/pe_2526/rtl/control/main_control.v
+    Info (12023): Found entity 1: main_control File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/control/main_control.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/dnld/documents/projects/de10_projects/pe_2526/rtl/new uart/tx.v
+    Info (12023): Found entity 1: uart_tx File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/tx.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/dnld/documents/projects/de10_projects/pe_2526/rtl/new uart/rx.v
+    Info (12023): Found entity 1: uart_rx File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/rx.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/dnld/documents/projects/de10_projects/pe_2526/rtl/new uart/uart_top.v
+    Info (12023): Found entity 1: uart_top File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/uart_top.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/dnld/documents/projects/de10_projects/pe_2526/rtl/ram_test.v
+    Info (12023): Found entity 1: ram_test File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/ram_test.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/dnld/documents/projects/de10_projects/pe_2526/rtl/memories.v
+    Info (12023): Found entity 1: memories File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/memories.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/dnld/documents/projects/de10_projects/pe_2526/rtl/tx_repeater.v
+    Info (12023): Found entity 1: tx_repeater File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/tx_repeater.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/dnld/documents/projects/de10_projects/pe_2526/rtl/uart/uart.v
+    Info (12023): Found entity 1: UART File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/UART/UART.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/dnld/documents/projects/de10_projects/pe_2526/rtl/pe_fpga_top.v
+    Info (12023): Found entity 1: PE_FPGA_top File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/dnld/documents/projects/de10_projects/pe_2526/rtl/control.v
+    Info (12023): Found entity 1: control File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/control.v Line: 6
+Info (12127): Elaborating entity "PE_FPGA_top" for the top level hierarchy
+Info (12128): Elaborating entity "memories" for hierarchy "memories:memories" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 50
+Info (12128): Elaborating entity "ram_test" for hierarchy "memories:memories|ram_test:u1" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/memories.v Line: 20
+Info (12128): Elaborating entity "uart_top" for hierarchy "uart_top:uart" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 64
+Info (12128): Elaborating entity "uart_rx" for hierarchy "uart_top:uart|uart_rx:rx" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/uart_top.v Line: 25
+Info (12128): Elaborating entity "uart_tx" for hierarchy "uart_top:uart|uart_tx:tx" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/uart_top.v Line: 26
+Info (12128): Elaborating entity "main_control" for hierarchy "main_control:main_ctrl" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 72
+Info (12128): Elaborating entity "uart_ctrl" for hierarchy "main_control:main_ctrl|uart_ctrl:uart_ctrl" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/control/main_control.v Line: 11
+Info (12128): Elaborating entity "control" for hierarchy "control:ctrl" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 73
+Info (12128): Elaborating entity "tx_repeater" for hierarchy "tx_repeater:tx_rpt" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 88
+Warning (10230): Verilog HDL assignment warning at tx_repeater.v(53): truncated value with size 32 to match size of target (8) File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/tx_repeater.v Line: 53
+Warning (10240): Verilog HDL Always Construct warning at tx_repeater.v(47): inferring latch(es) for variable "iTx_DV", which holds its previous value in one or more paths through the always construct File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/tx_repeater.v Line: 47
+Warning (10240): Verilog HDL Always Construct warning at tx_repeater.v(47): inferring latch(es) for variable "rx_inc_data", which holds its previous value in one or more paths through the always construct File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/tx_repeater.v Line: 47
+Warning (10240): Verilog HDL Always Construct warning at tx_repeater.v(47): inferring latch(es) for variable "tx_data", which holds its previous value in one or more paths through the always construct File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/tx_repeater.v Line: 47
+Info (10041): Inferred latch for "tx_data[0]" at tx_repeater.v(47) File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/tx_repeater.v Line: 47
+Info (10041): Inferred latch for "tx_data[1]" at tx_repeater.v(47) File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/tx_repeater.v Line: 47
+Info (10041): Inferred latch for "tx_data[2]" at tx_repeater.v(47) File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/tx_repeater.v Line: 47
+Info (10041): Inferred latch for "tx_data[3]" at tx_repeater.v(47) File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/tx_repeater.v Line: 47
+Info (10041): Inferred latch for "tx_data[4]" at tx_repeater.v(47) File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/tx_repeater.v Line: 47
+Info (10041): Inferred latch for "tx_data[5]" at tx_repeater.v(47) File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/tx_repeater.v Line: 47
+Info (10041): Inferred latch for "tx_data[6]" at tx_repeater.v(47) File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/tx_repeater.v Line: 47
+Info (10041): Inferred latch for "tx_data[7]" at tx_repeater.v(47) File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/tx_repeater.v Line: 47
+Info (10041): Inferred latch for "rx_inc_data[0]" at tx_repeater.v(47) File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/tx_repeater.v Line: 47
+Info (10041): Inferred latch for "rx_inc_data[1]" at tx_repeater.v(47) File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/tx_repeater.v Line: 47
+Info (10041): Inferred latch for "rx_inc_data[2]" at tx_repeater.v(47) File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/tx_repeater.v Line: 47
+Info (10041): Inferred latch for "rx_inc_data[3]" at tx_repeater.v(47) File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/tx_repeater.v Line: 47
+Info (10041): Inferred latch for "rx_inc_data[4]" at tx_repeater.v(47) File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/tx_repeater.v Line: 47
+Info (10041): Inferred latch for "rx_inc_data[5]" at tx_repeater.v(47) File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/tx_repeater.v Line: 47
+Info (10041): Inferred latch for "rx_inc_data[6]" at tx_repeater.v(47) File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/tx_repeater.v Line: 47
+Info (10041): Inferred latch for "rx_inc_data[7]" at tx_repeater.v(47) File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/tx_repeater.v Line: 47
+Info (10041): Inferred latch for "iTx_DV" at tx_repeater.v(47) File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/tx_repeater.v Line: 47
+Warning (276027): Inferred dual-clock RAM node "memories:memories|ram_test:u1|ram_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
+Warning (276027): Inferred dual-clock RAM node "memories:memories|ram_test:u2|ram_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
+Warning (276027): Inferred dual-clock RAM node "memories:memories|ram_test:u3|ram_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
+Info (19000): Inferred 3 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "memories:memories|ram_test:u1|ram_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 10
+        Info (286033): Parameter NUMWORDS_A set to 1024
+        Info (286033): Parameter WIDTH_B set to 32
+        Info (286033): Parameter WIDTHAD_B set to 10
+        Info (286033): Parameter NUMWORDS_B set to 1024
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK1
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "memories:memories|ram_test:u2|ram_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 10
+        Info (286033): Parameter NUMWORDS_A set to 1024
+        Info (286033): Parameter WIDTH_B set to 32
+        Info (286033): Parameter WIDTHAD_B set to 10
+        Info (286033): Parameter NUMWORDS_B set to 1024
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK1
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "memories:memories|ram_test:u3|ram_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 10
+        Info (286033): Parameter NUMWORDS_A set to 1024
+        Info (286033): Parameter WIDTH_B set to 32
+        Info (286033): Parameter WIDTHAD_B set to 10
+        Info (286033): Parameter NUMWORDS_B set to 1024
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK1
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+Info (12130): Elaborated megafunction instantiation "memories:memories|ram_test:u1|altsyncram:ram_rtl_0"
+Info (12133): Instantiated megafunction "memories:memories|ram_test:u1|altsyncram:ram_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTHAD_A" = "10"
+    Info (12134): Parameter "NUMWORDS_A" = "1024"
+    Info (12134): Parameter "WIDTH_B" = "32"
+    Info (12134): Parameter "WIDTHAD_B" = "10"
+    Info (12134): Parameter "NUMWORDS_B" = "1024"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK1"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_mcd1.tdf
+    Info (12023): Found entity 1: altsyncram_mcd1 File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Synthesis/db/altsyncram_mcd1.tdf Line: 28
+Info (13000): Registers with preset signals will power-up high File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/tx.v Line: 8
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 14 registers lost all their fanouts during netlist optimizations.
+Warning (20013): Ignored 209 assignments for entity "UART" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_CLK_10 -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[0] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[10] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[11] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[12] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[13] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[14] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[15] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[1] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[2] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[3] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[4] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[5] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[6] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[7] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[8] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[9] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_RESET_N -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[0] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[10] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[11] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[12] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[1] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[2] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[3] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[4] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[5] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[6] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[7] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[8] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[9] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_BA[0] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_BA[1] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CAS_N -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CKE -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CLK -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CS_N -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[0] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[10] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[11] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[12] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[13] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[14] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[15] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[1] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[2] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[3] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[4] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[5] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[6] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[7] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[8] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[9] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_LDQM -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_RAS_N -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_UDQM -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_WE_N -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[0] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[10] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[11] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[12] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[13] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[14] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[15] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[16] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[17] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[18] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[19] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[1] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[20] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[21] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[22] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[23] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[24] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[25] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[26] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[27] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[28] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[29] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[2] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[30] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[31] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[32] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[33] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[34] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[35] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[3] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[4] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[5] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[6] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[7] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[8] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[9] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GSENSOR_CS_N -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GSENSOR_INT[1] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GSENSOR_INT[2] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GSENSOR_SCLK -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GSENSOR_SDI -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GSENSOR_SDO -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[0] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[1] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[2] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[3] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[4] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[5] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[6] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[7] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[0] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[1] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[2] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[3] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[4] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[5] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[6] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[7] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[0] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[1] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[2] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[3] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[4] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[5] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[6] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[7] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[0] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[1] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[2] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[3] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[4] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[5] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[6] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[7] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[0] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[1] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[2] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[3] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[4] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[5] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[6] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[7] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[0] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[1] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[2] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[3] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[4] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[5] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[6] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[7] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to KEY[0] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to KEY[1] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[0] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[1] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[2] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[3] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[4] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[5] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[6] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[7] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[8] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[9] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MAX10_CLK1_50 -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MAX10_CLK2_50 -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[0] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[1] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[2] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[3] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[4] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[5] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[6] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[7] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[8] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[9] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[0] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[1] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[2] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[3] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[0] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[1] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[2] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[3] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_HS -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[0] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[1] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[2] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[3] -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_VS -entity UART was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity UART -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity UART -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity UART -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_PRESERVE_HIGH_SPEED_TILES ON -entity UART -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IGNORE_SOURCE_FILE_CHANGES OFF -entity UART -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ALWAYS_USE_QXP_NETLIST OFF -entity UART -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_COLOR 16764057 -entity UART -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_ASSIGNMENTS ON -entity UART -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_ASSIGNMENTS REPLACE_CONFLICTING -entity UART -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS UPDATE_CONFLICTING -entity UART -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PIN_ASSIGNMENTS ON -entity UART -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PROMOTE_ASSIGNMENTS ON -entity UART -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_TYPE STANDARD_PARTITION -entity UART -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ALLOW_MULTIPLE_PERSONAS OFF -entity UART -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ASD_REGION_ID 1 -entity UART -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name CROSS_BOUNDARY_OPTIMIZATIONS OFF -entity UART -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_CONSTANTS_ON_INPUTS ON -entity UART -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_INVERSIONS_ON_INPUTS ON -entity UART -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS ON -entity UART -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_INPUTS ON -entity UART -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_BIDIRS ON -entity UART -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS ON -entity UART -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity UART -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity UART -section_id Top was ignored
+Info (144001): Generated suppressed messages file C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Synthesis/output_files/PE2526.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "iRx_serial" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 18
+Info (21057): Implemented 343 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 13 output pins
+    Info (21061): Implemented 230 logic cells
+    Info (21064): Implemented 96 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 220 warnings
+    Info: Peak virtual memory: 4798 megabytes
+    Info: Processing ended: Sun Aug 24 18:34:31 2025
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:30
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Synthesis/output_files/PE2526.map.smsg.
+
+
