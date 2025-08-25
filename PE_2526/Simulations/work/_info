@@ -9,182 +9,182 @@ z2
 cModel Technology
 dC:/Users/DNLD/Documents/Projects/DE10_projects/UART/Simulations
 vcontrol
-!s110 1755949401
+Z0 !s110 1756138551
 !i10b 1
 !s100 RU@3SbcO[TOZzH`6HCa;f3
 I2>KT6VQ]dOW@Ga^H?OgD42
-Z0 VDg1SIo80bB@j0V0VzS_@n1
-Z1 dC:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Simulations
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Simulations
 w1755922077
 8C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/control.v
 FC:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/control.v
 L0 6
-Z2 OV;L;10.5b;63
+Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-!s108 1755949401.000000
+Z4 !s108 1756138551.000000
 !s107 C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/control.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/control.v|
 !i113 1
-Z3 o-work work
-Z4 tCvgOpt 0
+Z5 o-work work
+Z6 tCvgOpt 0
 vmain_control
-Z5 !s110 1755949403
+Z7 !s110 1756138552
 !i10b 1
-!s100 NQ7lcogmm3V5I2hS0;ohe2
-IcmjX@JU6i6IO96E16PhY^1
-R0
+!s100 [IXEAK4Q1QN7gM?EW=9ah2
+IAOLhzE;<^CYGdnkz3GFH51
 R1
-w1755945480
+R2
+w1755954641
 8C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/control/main_control.v
 FC:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/control/main_control.v
 L0 1
-R2
+R3
 r1
 !s85 0
 31
-Z6 !s108 1755949403.000000
+Z8 !s108 1756138552.000000
 !s107 C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/control/main_control.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/control/main_control.v|
 !i113 1
-R3
-R4
+R5
+R6
 vmem1
-Z7 !s110 1755949412
+Z9 !s110 1756138717
 !i10b 1
 !s100 cgDEgmH9QGh4J38UD7RV=2
 ISi9:`Cj<^B46`4Oj7RF]30
-R0
 R1
+R2
 w1755631327
 8C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Synthesis/mem1.v
 FC:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Synthesis/mem1.v
 L0 40
-R2
+R3
 r1
 !s85 0
 31
-Z8 !s108 1755949412.000000
+Z10 !s108 1756138717.000000
 !s107 C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Synthesis/mem1.v|
 !s90 -reportprogress|300|C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Synthesis/mem1.v|
 !i113 1
-R4
+R6
 vmemories
-R7
+R9
 !i10b 1
-!s100 CM`3n[D68az[[V8fVidXI1
-I1V]NXL9oFCeBCe6?KleRN1
-R0
+!s100 >A^@=l6m>B@lP1gzK`V<c2
+ID=4^UF7e1Q6WZkjJ[6KG=1
 R1
-w1755889944
-Z9 8C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/memories.v
-Z10 FC:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/memories.v
-L0 1
 R2
+w1756037574
+Z11 8C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/memories.v
+Z12 FC:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/memories.v
+L0 1
+R3
 r1
 !s85 0
 31
-R8
-Z11 !s107 C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/memories.v|
-Z12 !s90 -reportprogress|300|C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/memories.v|
+R10
+Z13 !s107 C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/memories.v|
+Z14 !s90 -reportprogress|300|C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/memories.v|
 !i113 1
-R4
+R6
 vmemory_block
 !s110 1755716824
 !i10b 1
 !s100 j:@=CfW:h[E:SOVScbaho3
 Ib56hR]Dgm4kLI^WeYzfic1
-R0
 R1
-w1755699115
-R9
-R10
-L0 1
 R2
+w1755699115
+R11
+R12
+L0 1
+R3
 r1
 !s85 0
 31
 !s108 1755716824.000000
-R11
-R12
+R13
+R14
 !i113 1
-R4
+R6
 vPE2526_tb
-R7
+R9
 !i10b 1
 !s100 =zHkAijR[2=V?LHQeo8[:0
 IgY^2M5^NG?8EL^Fo`c6@G2
-R0
 R1
-w1755949279
-Z13 8C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Testbench/PE2526_tb.v
-Z14 FC:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Testbench/PE2526_tb.v
-L0 3
 R2
+w1755949279
+Z15 8C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Testbench/PE2526_tb.v
+Z16 FC:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Testbench/PE2526_tb.v
+L0 3
+R3
 r1
 !s85 0
 31
-R8
+R10
 !s107 C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Testbench/PE2526_tb.v|
-Z15 !s90 -reportprogress|300|C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Testbench/PE2526_tb.v|
+Z17 !s90 -reportprogress|300|C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Testbench/PE2526_tb.v|
 !i113 1
-R4
+R6
 n@p@e2526_tb
 vPE_FPGA_top
-R7
+R9
 !i10b 1
-!s100 FOFh^Ae8aR81bf<h]TjHD3
-Imld4lJXn89HJ>cK]kLFMf0
-R0
+!s100 ;B17h<X^cigBEo18:oD1[2
+I3MQ5D38WB3FB5nRWJb_0g1
 R1
-w1755944862
+R2
+w1755954805
 8C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v
 FC:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v
 L0 3
-R2
+R3
 r1
 !s85 0
 31
-R8
+R10
 !s107 C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v|
 !s90 -reportprogress|300|C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v|
 !i113 1
-R4
+R6
 n@p@e_@f@p@g@a_top
 vram_test
-Z16 !s110 1755949402
+R7
 !i10b 1
 !s100 01o[3][a9h[PO@W2H6W753
 I:IAPJ@]UEDOzPRR5kEfel0
-R0
 R1
+R2
 w1755790493
 8C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/ram_test.v
 FC:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/ram_test.v
 L0 1
-R2
+R3
 r1
 !s85 0
 31
-Z17 !s108 1755949402.000000
+R8
 !s107 C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/ram_test.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/ram_test.v|
 !i113 1
-R3
-R4
+R5
+R6
 vtb_memory_block
 !s110 1755713868
 !i10b 1
 !s100 G_<mR^BeFmagG8H>ENPGi1
 IhODF64Ke=^9mBDbFcWfJ`2
-R0
 R1
-w1755712819
-R13
-R14
-L0 3
 R2
+w1755712819
+R15
+R16
+L0 3
+R3
 r1
 !s85 0
 31
@@ -192,126 +192,126 @@ r1
 !s107 C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Testbench/PE2526_tb.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Testbench/PE2526_tb.v|
 !i113 1
-R3
-R4
+R5
+R6
 vtb_PE2526
 !s110 1755715438
 !i10b 1
 !s100 =E:`RKF?Rc2X2OTzj@ITL1
 IcgWV6LTXcSX3bU<5g1lfS0
-R0
 R1
-w1755713964
-R13
-R14
-L0 3
 R2
+w1755713964
+R15
+R16
+L0 3
+R3
 r1
 !s85 0
 31
 !s108 1755715438.000000
 !s107 C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Testbench/PE2526_tb.v|
-R15
+R17
 !i113 1
-R4
+R6
 ntb_@p@e2526
 vtx_repeater
-R16
+R0
 !i10b 1
 !s100 ZEzZALMfk2<gQ_XKaYfRL1
 ISKffbH<bYOlKcA`Zm;_^Y0
-R0
 R1
+R2
 w1740319442
 8C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/tx_repeater.v
 FC:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/tx_repeater.v
 L0 1
-R2
+R3
 r1
 !s85 0
 31
-R17
+R4
 !s107 C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/tx_repeater.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/tx_repeater.v|
 !i113 1
-R3
-R4
+R5
+R6
 vUART
-R16
+R0
 !i10b 1
 !s100 1H4OAcm;Jm:LaZG@;iK]`2
 I1bNb=<mjmQbHUYf^Z5i_@1
-R0
 R1
+R2
 w1740122721
 8C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/UART/UART.v
 FC:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/UART/UART.v
 L0 3
-R2
+R3
 r1
 !s85 0
 31
-R17
+R4
 !s107 C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/UART/UART.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/UART/UART.v|
 !i113 1
-R3
-R4
+R5
+R6
 n@u@a@r@t
 vuart_ctrl
-R5
+R7
 !i10b 1
-!s100 hN8VQTeH[5X^Vzmzhz?S60
-IQTAA8Kia>E@l2?EO=PSPI2
-R0
+!s100 ll:08z]EeaJ4jEPah>]HB0
+IQ2:LHgzanlS=CVkT_Q0[K1
 R1
-w1755949385
+R2
+w1756138506
 8C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/control/uart_ctrl.v
 FC:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/control/uart_ctrl.v
 L0 1
-R2
+R3
 r1
 !s85 0
 31
-R6
+R8
 !s107 C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/control/uart_ctrl.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/control/uart_ctrl.v|
 !i113 1
-R3
-R4
+R5
+R6
 vuart_rx
-R16
+R7
 !i10b 1
-!s100 kaR_1z7_1IoKNAcY`Y2Vj0
-I8T4@4X3hdMMoHV40<AYRE1
-R0
+!s100 1ThI`C:L0VUI1AaZcH[O^1
+IzDC]_oBBA?Tna5I^NClJW0
 R1
-w1755893011
+R2
+w1755955881
 8C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/rx.v
 FC:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/rx.v
 L0 1
-R2
+R3
 r1
 !s85 0
 31
-R17
+R8
 !s107 C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/rx.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/rx.v|
 !i113 1
-R3
-R4
+R5
+R6
 vUART_tb2
 !s110 1755699127
 !i10b 1
 !s100 lO8bX`@maiQ@:>N09_=5?0
 I>>Jc<Q2f7i@;gMCa<N:dD2
-R0
 R1
+R2
 w1755284587
 8C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Testbench/uart_tb2.v
 FC:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Testbench/uart_tb2.v
 L0 8
-R2
+R3
 r1
 !s85 0
 31
@@ -319,48 +319,48 @@ r1
 !s107 C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Testbench/uart_tb2.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Testbench/uart_tb2.v|
 !i113 1
-R3
-R4
+R5
+R6
 n@u@a@r@t_tb2
 vuart_top
-R16
+R7
 !i10b 1
 !s100 8j5>;GCgmLTiz]I@d=ehV2
 IWIIM8W^D9Whi6AYTIAF_S3
-R0
 R1
+R2
 w1755944798
 8C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/uart_top.v
 FC:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/uart_top.v
 L0 1
-R2
+R3
 r1
 !s85 0
 31
-R17
+R8
 !s107 C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/uart_top.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/uart_top.v|
 !i113 1
-R3
-R4
+R5
+R6
 vuart_tx
-R16
+R7
 !i10b 1
-!s100 8X@MP?6H:j4@J]4k<2Yc_3
-IG8CJHohfC^E?XGRjYT4:O2
-R0
+!s100 `B@R3nzRAa77c89?[DOLI1
+I?Qc07FVg>egiK=SOZNXi70
 R1
-w1755893987
+R2
+w1755956002
 8C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/tx.v
 FC:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/tx.v
 L0 1
-R2
+R3
 r1
 !s85 0
 31
-R17
+R8
 !s107 C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/tx.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/tx.v|
 !i113 1
-R3
-R4
+R5
+R6

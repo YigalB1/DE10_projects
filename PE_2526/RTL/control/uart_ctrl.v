@@ -18,6 +18,7 @@ module uart_ctrl (
 
     reg [2:0] state, next_state;
     reg  [7:0] num_of_bytes; // how many bytes to send
+    
 
     // State register
     always @(posedge clk or posedge rst) begin
@@ -30,7 +31,8 @@ module uart_ctrl (
 
             if (state == STATE0) begin // prep next send and wait for TX ready
                 tx_start <= 1'b0;
-                tx_data <= 8'h30; // the ascii for 0 TX data
+                tx_data <= "A"; // ASCII 'A (65 dec = 41Hex)
+                // Z is 90 dec. or 5A Hex
                 num_of_bytes <= 4'd6; //send 6 bytes
             end
             else if (state == STATE1) begin // start transmitting
@@ -44,13 +46,10 @@ module uart_ctrl (
             end
             else if (state == STATE3) begin // staXXXrt transmitting
                 tx_start <= 1'b0;
- 
             end
             else if (state == STATE4) begin // staXXXrt transmitting
                 tx_start <= 1'b0;
-     
             end
-            
         end // of not reset
     end // of always
 

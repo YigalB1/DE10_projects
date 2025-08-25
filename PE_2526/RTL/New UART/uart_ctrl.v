@@ -27,10 +27,12 @@ module uart_control (
     output reg led7
 );
 
-    reg [3:0] state = 0;
+    reg [3:0] state=0;
     reg [9:0] byte_counter = 0;
-    reg [7:0] command_byte = 0;
+    reg [7:0] command_byte = 0; // the command that will come from  RX (from host)
     reg [23:0] led_timer = 0;
+
+    reg [7:0] tx_val; // value to be transmitted, from a to z h61 to
 
     always @(posedge clk or posedge rst) begin
         if (rst) begin
@@ -50,17 +52,21 @@ module uart_control (
 
             case (state)
                 4'd0: begin
+                    tx_val <= "A"; // ASCII 'A
+                    /*
+                    currently RX is not implemented
                     if (rx_ready) begin
                         command_byte <= rx_data;
                         state <= 4'd1;
                     end
+                    */
                 end
 
                 4'd1: begin
                     case (command_byte)
                         8'd0: begin
                             if (!tx_busy) begin
-                                tx_data <= command_byte;
+                                tx_data <= tx_val;
                                 tx_start <= 1;
                                 state <= 4'd0;
                             end
