@@ -1,21 +1,4 @@
 
-State Machine - |PE_FPGA_top|tx_repeater:tx_rpt|current_state
-Name current_state.STATE3 current_state.STATE2 current_state.STATE1 current_state.STATE0 current_state.STATE4 
-current_state.STATE0 0 0 0 0 0 
-current_state.STATE1 0 0 1 1 0 
-current_state.STATE2 0 1 0 1 0 
-current_state.STATE3 1 0 0 1 0 
-current_state.STATE4 0 0 0 1 1 
-
-State Machine - |PE_FPGA_top|main_control:main_ctrl|uart_ctrl:uart_ctrl|state
-Name state.STATE7 state.STATE4 state.STATE3 state.STATE2 state.STATE1 state.STATE0 
-state.STATE0 0 0 0 0 0 0 
-state.STATE1 0 0 0 0 1 1 
-state.STATE2 0 0 0 1 0 1 
-state.STATE3 0 0 1 0 0 1 
-state.STATE4 0 1 0 0 0 1 
-state.STATE7 1 0 0 0 0 1 
-
 State Machine - |PE_FPGA_top|memories:memories|current_state
 Name current_state.STATE7 current_state.STATE6 current_state.STATE5 current_state.STATE4 current_state.STATE3 current_state.STATE2 current_state.STATE1 current_state.STATE0 current_state.STATE8 
 current_state.STATE0 0 0 0 0 0 0 0 0 0 

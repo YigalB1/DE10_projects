@@ -22,7 +22,7 @@ module uart_top (
 
    
     // Instantiate RX block
-    uart_rx rx(clk,rst,clk_freq,baud_rate,baud_tick,half_baud,uart_rx,rx_data,rx_ready);
-    uart_tx tx(clk,rst,clk_freq,baud_rate,tx_data,tx_start,uart_tx,tx_busy);
+    rx rx(clk,rst,baud_tick,half_baud,uart_rx,rx_data,rx_ready);
+    tx tx(clk,rst,clk_freq,baud_rate,tx_data,tx_start,uart_tx,tx_busy);
 
 endmodule

@@ -202,13 +202,8 @@ always @(posedge clk or posedge rst) begin
     end
 end
 
-
-
-
   // Internal memory arrays
   parameter  MEM_IN_SIZE = 2048; // was 1024
   parameter  OPCODE_SIZE = 256;
-
-
 
 endmodule

@@ -1,4 +1,4 @@
-module uart_tx (
+module tx (
     input clk,              // 50 MHz system clock
     input rst,   
     input wire [31:0] clk_freq,
@@ -9,11 +9,23 @@ module uart_tx (
     output reg busy         // high while transmitting
 );
 
-parameter BAUD_RATE = 115200;
-parameter CLOCK_FREQ = 50000000;
-parameter BAUD_DIV = CLOCK_FREQ / BAUD_RATE;
+//parameter BAUD_RATE = 115200;
+//parameter CLOCK_FREQ = 50000000;
+//parameter BAUD_DIV = CLOCK_FREQ / BAUD_RATE;
 
-reg [15:0] clk_div = 0;
+//reg [15:0] baud_div;
+reg [31:0] baud_div;
+
+always @(posedge clk or posedge rst) begin
+    if (rst)
+        baud_div <= 0;
+    else
+        baud_div <= clk_freq / baud;
+end
+
+
+//reg [13:0] clk_div = 0;
+reg [31:0] clk_div = 0;
 reg baud_tick = 0;
 
 reg [3:0] bit_index = 0;
@@ -24,11 +36,11 @@ always @(posedge clk or posedge rst) begin
         clk_div <= 0;
         baud_tick <= 0;
     end else begin
-        if (clk_div == BAUD_DIV - 1) begin
+        if (clk_div == baud_div - 1) begin
             clk_div <= 0;
             baud_tick <= 1;
         end else begin
-            clk_div <= clk_div + 16'b1;
+            clk_div <= clk_div + 32'b1;
             baud_tick <= 0;
         end
     end

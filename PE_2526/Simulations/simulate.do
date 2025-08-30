@@ -5,23 +5,18 @@ quietly set PrefMain(autoOpenFile) 0
 vlib work
 vmap work work
 
-# Create and map Intel FPGA simulation libraries
-vlib altera_mf
-vmap altera_mf altera_mf
-vlog -work altera_mf "C:/intelFPGA_lite/23.1std/quartus/eda/sim_lib/altera_mf.v"
+set MsgMode verbose
+set DisplayMsgMode both
 
-
-
-#vlib altera_lnsim
-#vmap altera_lnsim "C:/intelFPGA/23.1std/quartus/eda/sim_lib/altera_lnsim"
 
 # Compile design files
-vlog C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Synthesis/mem1.v
-vlog C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/memories.v
-vlog C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v
+##vlog C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Synthesis/mem1.v
 
 # Compile your testbench
-vlog C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Testbench/PE2526_tb.v
+##vlog C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Testbench/PE2526_tb.v
+
+project compileall
+
 
 # Launch simulation with the top-level testbench
 vsim -L altera_mf -L altera_lnsim work.PE2526_tb
@@ -39,24 +34,35 @@ add wave -label reset sim:/PE2526_tb/DUT/reset
 #add wave -radix hex -label dout sim:/PE2526_tb/DUT/memories/dout1
 #add wave -radix bin -label we sim:/PE2526_tb/DUT/memories/we1
 #add wave -radix bin -label init sim:/PE2526_tb/DUT/memories/init
-add wave -radix hex -label state sim:/PE2526_tb/DUT/main_ctrl/uart_ctrl/state
-add wave -radix hex -label next_state sim:/PE2526_tb/DUT/main_ctrl/uart_ctrl/next_state
-add wave -radix hex -label num_of_bytes sim:/PE2526_tb/DUT/main_ctrl/uart_ctrl/num_of_bytes
-add wave -radix hex -label tx_data sim:/PE2526_tb/DUT/main_ctrl/uart_ctrl/tx_data
-add wave -radix bin -label tx_busy sim:/PE2526_tb/DUT/main_ctrl/uart_ctrl/tx_busy
-add wave -radix hex -label tx_data sim:/PE2526_tb/DUT/uart/tx_data
-add wave -radix bin -label tx_start sim:/PE2526_tb/DUT/uart/tx_start
-add wave -radix bin -label tx_busy sim:/PE2526_tb/DUT/uart/tx_busy
-add wave -radix hex -label shift_reg sim:/PE2526_tb/DUT/uart/tx/shift_reg
-add wave -radix hex -label bit_index sim:/PE2526_tb/DUT/uart/tx/bit_index
-add wave -radix bin -label busy  sim:/PE2526_tb/DUT/uart/tx/busy 
-add wave -radix bin -label tx sim:/PE2526_tb/DUT/uart/tx/tx
+add wave -radix hex -label state sim:/PE2526_tb/DUT/control_top/uart_tst/state
+add wave -radix hex -label next_state sim:/PE2526_tb/DUT/control_top/uart_tst/next_state
 
+add wave -radix bin -label tx_busy      sim:/PE2526_tb/DUT/control_top/uart_tst/tx_busy
+add wave -radix bin -label rx_ready     sim:/PE2526_tb/DUT/control_top/uart_tst/rx_ready
+add wave -radix hex -label data_to_tx   sim:/PE2526_tb/DUT/control_top/uart_tst/data_to_tx
+add wave -radix hex -label tx_data      sim:/PE2526_tb/DUT/control_top/uart_tst/tx_data
+add wave -radix hex -label tx_start sim:/PE2526_tb/DUT/control_top/uart_tst/tx_start
 
+add wave -radix bin -label rx_ready_flag sim:/PE2526_tb/DUT/control_top/uart_tst/rx_ready_flag
+add wave -radix bin -label rx         sim:/PE2526_tb/DUT/uart_top/rx/rx
+add wave -radix bin -label tx         sim:/PE2526_tb/DUT/uart_top/tx/tx
+add wave -radix bin -label receiving  sim:/PE2526_tb/DUT/uart_top/rx/receiving
+add wave -radix hex -label rx_data sim:/PE2526_tb/DUT/control_top/uart_tst/rx_data
+add wave -radix bin -label data_ready sim:/PE2526_tb/DUT/uart_top/rx/data_ready
 
+#add wave -radix hex -label tx sim:/PE2526_tb/DUT/oTx_Serial
+#add wave -radix hex -label rx_in sim:/PE2526_tb/DUT/rx_in
+#add wave -radix hex -label rx_sync    sim:/PE2526_tb/DUT/uart_top/rx/rx_sync
+#add wave -radix hex -label rx_prev    sim:/PE2526_tb/DUT/uart_top/rx/rx_prev
+#add wave -radix bin -label data_ready_next sim:/PE2526_tb/DUT/uart_top/rx/data_ready_next
+#add wave -radix hex -label baud_counter  sim:/PE2526_tb/DUT/uart_top/rx/baud_counter
+#add wave -radix hex -label bit_index  sim:/PE2526_tb/DUT/uart_top/rx/bit_index
+#add wave -radix bin -label rx_sync  sim:/PE2526_tb/DUT/uart_top/rx/rx_sync
+#add wave -radix hex -label rx_shift  sim:/PE2526_tb/DUT/uart_top/rx/rx_shift
 
 
 # Run simulation
+#run 100
 run -all
 
 wave zoom full

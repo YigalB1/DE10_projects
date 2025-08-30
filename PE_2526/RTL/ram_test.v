@@ -18,8 +18,4 @@ module ram_test (
         if (rd_en)
             data_out <= ram[addr];
     end
-
-
-
 endmodule
-
