@@ -70,6 +70,10 @@
 				{
 					"name" : "KEY[0]",
 					"strict" : false
+				},
+				{
+					"name" : "iRx_serial",
+					"strict" : false
 				}
 			]
 		}

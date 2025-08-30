@@ -12,8 +12,8 @@ LEDR[6] << sig_control:sig_control.port3
 LEDR[7] << sig_control:sig_control.port3
 LEDR[8] << sig_control:sig_control.port3
 LEDR[9] << sig_control:sig_control.port3
-iRx_serial => ~NO_FANOUT~
-oTx_Serial << rx_in.DB_MAX_OUTPUT_PORT_TYPE
+iRx_serial => rx_in.IN1
+oTx_Serial << uart_top:uart_top.port3
 clk_1hz << sig_control:sig_control.port4
 xor_tot << memories:memories.port5
 xor_tot2 << xor_tot2.DB_MAX_OUTPUT_PORT_TYPE

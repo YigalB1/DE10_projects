@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PE2526
-Sat Aug 30 09:56:26 2025
+Sat Aug 30 19:34:23 2025
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -64,13 +64,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Aug 30 09:56:25 2025          ;
+; Analysis & Synthesis Status        ; Successful - Sat Aug 30 19:34:23 2025          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; PE2526                                         ;
 ; Top-level Entity Name              ; PE_FPGA_top                                    ;
 ; Family                             ; MAX 10                                         ;
-; Total logic elements               ; 338                                            ;
-;     Total combinational functions  ; 328                                            ;
+; Total logic elements               ; 332                                            ;
+;     Total combinational functions  ; 322                                            ;
 ;     Dedicated logic registers      ; 220                                            ;
 ; Total registers                    ; 220                                            ;
 ; Total pins                         ; 18                                             ;
@@ -219,16 +219,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+---------------------+
 ; Resource                                    ; Usage               ;
 +---------------------------------------------+---------------------+
-; Estimated Total logic elements              ; 338                 ;
+; Estimated Total logic elements              ; 332                 ;
 ;                                             ;                     ;
-; Total combinational functions               ; 328                 ;
+; Total combinational functions               ; 322                 ;
 ; Logic element usage by number of LUT inputs ;                     ;
 ;     -- 4 input functions                    ; 110                 ;
 ;     -- 3 input functions                    ; 25                  ;
-;     -- <=2 input functions                  ; 193                 ;
+;     -- <=2 input functions                  ; 187                 ;
 ;                                             ;                     ;
 ; Logic elements by mode                      ;                     ;
-;     -- normal mode                          ; 185                 ;
+;     -- normal mode                          ; 179                 ;
 ;     -- arithmetic mode                      ; 143                 ;
 ;                                             ;                     ;
 ; Total registers                             ; 220                 ;
@@ -242,8 +242,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                     ;
 ; Maximum fan-out node                        ; MAX10_CLK1_50~input ;
 ; Maximum fan-out                             ; 316                 ;
-; Total fan-out                               ; 2984                ;
-; Average fan-out                             ; 4.39                ;
+; Total fan-out                               ; 2978                ;
+; Average fan-out                             ; 4.42                ;
 +---------------------------------------------+---------------------+
 
 
@@ -252,9 +252,9 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                            ; Entity Name     ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |PE_FPGA_top                                 ; 328 (25)            ; 220 (0)                   ; 98304       ; 0          ; 0            ; 0       ; 0         ; 18   ; 0            ; 0          ; |PE_FPGA_top                                                                                   ; PE_FPGA_top     ; work         ;
-;    |control_top:control_top|                 ; 34 (0)              ; 25 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|control_top:control_top                                                           ; control_top     ; work         ;
-;       |uart_tst:uart_tst|                    ; 34 (34)             ; 25 (25)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|control_top:control_top|uart_tst:uart_tst                                         ; uart_tst        ; work         ;
+; |PE_FPGA_top                                 ; 322 (25)            ; 220 (0)                   ; 98304       ; 0          ; 0            ; 0       ; 0         ; 18   ; 0            ; 0          ; |PE_FPGA_top                                                                                   ; PE_FPGA_top     ; work         ;
+;    |control_top:control_top|                 ; 28 (0)              ; 25 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|control_top:control_top                                                           ; control_top     ; work         ;
+;       |uart_tst:uart_tst|                    ; 28 (28)             ; 25 (25)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|control_top:control_top|uart_tst:uart_tst                                         ; uart_tst        ; work         ;
 ;    |memories:memories|                       ; 61 (61)             ; 49 (49)                   ; 98304       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|memories:memories                                                                 ; memories        ; work         ;
 ;       |ram_test:u1|                          ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|memories:memories|ram_test:u1                                                     ; ram_test        ; work         ;
 ;          |altsyncram:ram_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|memories:memories|ram_test:u1|altsyncram:ram_rtl_0                                ; altsyncram      ; work         ;
@@ -346,32 +346,29 @@ Encoding Type:  One-Hot
 ; Number of registers using Synchronous Load   ; 40    ;
 ; Number of registers using Asynchronous Clear ; 119   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 117   ;
+; Number of registers using Clock Enable       ; 116   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------+
-; Inverted Register Statistics                                      ;
-+---------------------------------------------------------+---------+
-; Inverted Register                                       ; Fan out ;
-+---------------------------------------------------------+---------+
-; uart_top:uart_top|tx:tx|tx                              ; 3       ;
-; uart_top:uart_top|tx:tx|shift_reg[8]                    ; 1       ;
-; uart_top:uart_top|tx:tx|shift_reg[2]                    ; 1       ;
-; uart_top:uart_top|tx:tx|shift_reg[1]                    ; 1       ;
-; uart_top:uart_top|tx:tx|shift_reg[0]                    ; 1       ;
-; uart_top:uart_top|tx:tx|shift_reg[3]                    ; 1       ;
-; uart_top:uart_top|tx:tx|shift_reg[6]                    ; 1       ;
-; uart_top:uart_top|tx:tx|shift_reg[5]                    ; 1       ;
-; uart_top:uart_top|tx:tx|shift_reg[4]                    ; 1       ;
-; uart_top:uart_top|tx:tx|shift_reg[7]                    ; 1       ;
-; control_top:control_top|uart_tst:uart_tst|state.STATE10 ; 5       ;
-; control_top:control_top|uart_tst:uart_tst|data_to_tx[2] ; 2       ;
-; control_top:control_top|uart_tst:uart_tst|data_to_tx[4] ; 2       ;
-; control_top:control_top|uart_tst:uart_tst|data_to_tx[6] ; 2       ;
-; Total number of inverted registers = 14                 ;         ;
-+---------------------------------------------------------+---------+
++------------------------------------------------------------------+
+; Inverted Register Statistics                                     ;
++--------------------------------------------------------+---------+
+; Inverted Register                                      ; Fan out ;
++--------------------------------------------------------+---------+
+; uart_top:uart_top|tx:tx|tx                             ; 2       ;
+; uart_top:uart_top|tx:tx|shift_reg[8]                   ; 1       ;
+; uart_top:uart_top|tx:tx|shift_reg[2]                   ; 1       ;
+; uart_top:uart_top|tx:tx|shift_reg[1]                   ; 1       ;
+; uart_top:uart_top|tx:tx|shift_reg[0]                   ; 1       ;
+; uart_top:uart_top|tx:tx|shift_reg[3]                   ; 1       ;
+; uart_top:uart_top|tx:tx|shift_reg[6]                   ; 1       ;
+; uart_top:uart_top|tx:tx|shift_reg[5]                   ; 1       ;
+; uart_top:uart_top|tx:tx|shift_reg[4]                   ; 1       ;
+; uart_top:uart_top|tx:tx|shift_reg[7]                   ; 1       ;
+; control_top:control_top|uart_tst:uart_tst|state.STATE0 ; 11      ;
+; Total number of inverted registers = 11                ;         ;
++--------------------------------------------------------+---------+
 
 
 +------------------------------------------------------------------------------------------------+
@@ -393,10 +390,10 @@ Encoding Type:  One-Hot
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |PE_FPGA_top|uart_top:uart_top|tx:tx|bit_index[3]                 ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |PE_FPGA_top|uart_top:uart_top|rx:rx|data_out[0]                  ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |PE_FPGA_top|control_top:control_top|uart_tst:uart_tst|tx_data[5] ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |PE_FPGA_top|uart_top:uart_top|rx:rx|bit_index[1]                 ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; Yes        ; |PE_FPGA_top|uart_top:uart_top|rx:rx|baud_counter[30]             ;
-; 4:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |PE_FPGA_top|memories:memories|din[12]                            ;
-; 6:1                ; 10 bits   ; 40 LEs        ; 10 LEs               ; 30 LEs                 ; Yes        ; |PE_FPGA_top|memories:memories|addr[1]                            ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |PE_FPGA_top|uart_top:uart_top|rx:rx|bit_index[0]                 ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; Yes        ; |PE_FPGA_top|uart_top:uart_top|rx:rx|baud_counter[31]             ;
+; 4:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |PE_FPGA_top|memories:memories|din[13]                            ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 10 LEs               ; 30 LEs                 ; Yes        ; |PE_FPGA_top|memories:memories|addr[3]                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
 
 
@@ -432,7 +429,7 @@ Encoding Type:  One-Hot
 +----------------+-------+----------------------------------------------------+
 ; Parameter Name ; Value ; Type                                               ;
 +----------------+-------+----------------------------------------------------+
-; UART_loopback  ; 1     ; Unsigned Binary                                    ;
+; UART_loopback  ; 0     ; Unsigned Binary                                    ;
 +----------------+-------+----------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -697,7 +694,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------+-------+----------+------------------+
 ; Port          ; Type  ; Severity ; Details          ;
 +---------------+-------+----------+------------------+
-; UART_loopback ; Input ; Info     ; Stuck at VCC     ;
+; UART_loopback ; Input ; Info     ; Stuck at GND     ;
 +---------------+-------+----------+------------------+
 
 
@@ -744,28 +741,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; boundary_port         ; 18                          ;
 ; cycloneiii_ff         ; 220                         ;
-;     CLR               ; 16                          ;
+;     CLR               ; 17                          ;
 ;     CLR SCLR          ; 32                          ;
 ;     ENA               ; 14                          ;
-;     ENA CLR           ; 63                          ;
+;     ENA CLR           ; 62                          ;
 ;     ENA CLR SCLR SLD  ; 8                           ;
 ;     ENA SLD           ; 32                          ;
 ;     SCLR              ; 40                          ;
 ;     plain             ; 15                          ;
-; cycloneiii_lcell_comb ; 329                         ;
+; cycloneiii_lcell_comb ; 323                         ;
 ;     arith             ; 143                         ;
 ;         2 data inputs ; 142                         ;
 ;         3 data inputs ; 1                           ;
-;     normal            ; 186                         ;
+;     normal            ; 180                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 30                          ;
-;         2 data inputs ; 21                          ;
+;         1 data inputs ; 23                          ;
+;         2 data inputs ; 22                          ;
 ;         3 data inputs ; 24                          ;
 ;         4 data inputs ; 110                         ;
 ; cycloneiii_ram_block  ; 96                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 7.00                        ;
-; Average LUT depth     ; 3.22                        ;
+; Average LUT depth     ; 3.23                        ;
 +-----------------------+-----------------------------+
 
 
@@ -784,7 +781,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Sat Aug 30 09:56:01 2025
+    Info: Processing started: Sat Aug 30 19:34:11 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PE2526 -c PE2526
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -809,13 +806,13 @@ Info (12021): Found 1 design units, including 1 entities, in source file /users/
 Info (12127): Elaborating entity "PE_FPGA_top" for the top level hierarchy
 Info (12128): Elaborating entity "memories" for hierarchy "memories:memories" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 34
 Info (12128): Elaborating entity "ram_test" for hierarchy "memories:memories|ram_test:u1" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/memories.v Line: 20
-Info (12128): Elaborating entity "uart_top" for hierarchy "uart_top:uart_top" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 56
+Info (12128): Elaborating entity "uart_top" for hierarchy "uart_top:uart_top" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 58
 Info (12128): Elaborating entity "rx" for hierarchy "uart_top:uart_top|rx:rx" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/uart_top.v Line: 25
 Info (12128): Elaborating entity "tx" for hierarchy "uart_top:uart_top|tx:tx" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/uart_top.v Line: 26
-Info (12128): Elaborating entity "control_top" for hierarchy "control_top:control_top" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 58
+Info (12128): Elaborating entity "control_top" for hierarchy "control_top:control_top" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 60
 Info (12128): Elaborating entity "uart_tst" for hierarchy "control_top:control_top|uart_tst:uart_tst" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/control/control_top.v Line: 12
 Info (10018): Can't recognize finite state machine "state" because it has a complex reset state
-Info (12128): Elaborating entity "sig_control" for hierarchy "sig_control:sig_control" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 60
+Info (12128): Elaborating entity "sig_control" for hierarchy "sig_control:sig_control" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 62
 Warning (276027): Inferred dual-clock RAM node "memories:memories|ram_test:u1|ram_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Warning (276027): Inferred dual-clock RAM node "memories:memories|ram_test:u2|ram_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Warning (276027): Inferred dual-clock RAM node "memories:memories|ram_test:u3|ram_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
@@ -887,46 +884,19 @@ Info (13000): Registers with preset signals will power-up high File: C:/Users/DN
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 4 registers lost all their fanouts during netlist optimizations.
-Warning (20013): Ignored 24 assignments for entity "UART" -- entity does not exist in design
-    Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity UART -section_id Top was ignored
-    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity UART -section_id Top was ignored
-    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity UART -section_id Top was ignored
-    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_PRESERVE_HIGH_SPEED_TILES ON -entity UART -section_id Top was ignored
-    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IGNORE_SOURCE_FILE_CHANGES OFF -entity UART -section_id Top was ignored
-    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ALWAYS_USE_QXP_NETLIST OFF -entity UART -section_id Top was ignored
-    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_COLOR 16764057 -entity UART -section_id Top was ignored
-    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_ASSIGNMENTS ON -entity UART -section_id Top was ignored
-    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_ASSIGNMENTS REPLACE_CONFLICTING -entity UART -section_id Top was ignored
-    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS UPDATE_CONFLICTING -entity UART -section_id Top was ignored
-    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PIN_ASSIGNMENTS ON -entity UART -section_id Top was ignored
-    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PROMOTE_ASSIGNMENTS ON -entity UART -section_id Top was ignored
-    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_TYPE STANDARD_PARTITION -entity UART -section_id Top was ignored
-    Warning (20014): Assignment for entity set_global_assignment -name ALLOW_MULTIPLE_PERSONAS OFF -entity UART -section_id Top was ignored
-    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ASD_REGION_ID 1 -entity UART -section_id Top was ignored
-    Warning (20014): Assignment for entity set_global_assignment -name CROSS_BOUNDARY_OPTIMIZATIONS OFF -entity UART -section_id Top was ignored
-    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_CONSTANTS_ON_INPUTS ON -entity UART -section_id Top was ignored
-    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_INVERSIONS_ON_INPUTS ON -entity UART -section_id Top was ignored
-    Warning (20014): Assignment for entity set_global_assignment -name REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS ON -entity UART -section_id Top was ignored
-    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_INPUTS ON -entity UART -section_id Top was ignored
-    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_BIDIRS ON -entity UART -section_id Top was ignored
-    Warning (20014): Assignment for entity set_global_assignment -name ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS ON -entity UART -section_id Top was ignored
-    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity UART -section_id Top was ignored
-    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity UART -section_id Top was ignored
 Info (144001): Generated suppressed messages file C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Synthesis/output_files/PE2526.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "iRx_serial" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 18
-Info (21057): Implemented 453 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 447 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 14 output pins
-    Info (21061): Implemented 339 logic cells
+    Info (21061): Implemented 333 logic cells
     Info (21064): Implemented 96 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 31 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
     Info: Peak virtual memory: 4798 megabytes
-    Info: Processing ended: Sat Aug 30 09:56:26 2025
-    Info: Elapsed time: 00:00:25
-    Info: Total CPU time (on all processors): 00:00:39
+    Info: Processing ended: Sat Aug 30 19:34:23 2025
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:29
 
 
 +------------------------------------------+

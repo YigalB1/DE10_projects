@@ -1,12 +1,12 @@
-Fitter Status : Successful - Sat Aug 30 09:56:42 2025
+Fitter Status : Successful - Sat Aug 30 19:34:36 2025
 Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 Revision Name : PE2526
 Top-level Entity Name : PE_FPGA_top
 Family : MAX 10
 Device : 10M50DAF484C6GES
 Timing Models : Preliminary
-Total logic elements : 339 / 49,760 ( < 1 % )
-    Total combinational functions : 330 / 49,760 ( < 1 % )
+Total logic elements : 331 / 49,760 ( < 1 % )
+    Total combinational functions : 324 / 49,760 ( < 1 % )
     Dedicated logic registers : 220 / 49,760 ( < 1 % )
 Total registers : 220
 Total pins : 18 / 360 ( 5 % )

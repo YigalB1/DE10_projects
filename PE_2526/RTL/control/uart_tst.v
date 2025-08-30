@@ -39,15 +39,15 @@ module uart_tst (
             tx_data <= 8'b0;
             rx_ready_flag <= 1'b0;
             if (UART_loopback == 1) begin // loop back
-                state <= STATE10;
+                state <= STATE10; // loop back mode
                 data_to_tx <= 8'h54;
             end
-            else begin
-                state <= STATE0; // normal mode
-                // Normal mode: reieve byte from host and send it back, incremented by 1    
-                data_to_tx <= 8'b0;
+        else begin
+            state <= STATE0; // normal mode
+            // Normal mode: recieve byte from host and send it back, incremented by 1    
+            data_to_tx <= 8'b0;
             end
-        end
+        end // of if rst
         else begin
             state <= next_state;
            // Set the flag when rx_ready pulses

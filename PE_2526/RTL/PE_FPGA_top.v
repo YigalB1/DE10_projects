@@ -44,7 +44,9 @@ wire tx_start;
 wire rx_ready;
 wire tx_busy;
 
-parameter UART_loopback = 1'b1;
+//parameter UART_loopback = 1'b1; // 1: loopback mode. 0: normal mode
+parameter UART_loopback = 1'b0; // 1: loopback mode. 0: normal mode
+
 wire loopback;
 assign loopback = UART_loopback;
 
