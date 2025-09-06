@@ -16,13 +16,12 @@ crash.*.log
 *.tfvars
 *.tfvars.json
 
-UART/Simulations
-UART/Synthesis
+PE_2526/Simulations/
+PE_2526/Synthesis/
+!PE_2526/Synthesis/PE2526.pin
 7seg/Simulations
 7seg/Synthesis
-DE10_Lite_SDRAM/MIF
-Push_buttons/Synthesis
-UART_IP
+
 
 
 # Ignore override files as they are usually used to override resources locally and so
