@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PE2526
-Sat Sep  6 07:36:27 2025
+Sat Sep  6 14:25:44 2025
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -34,16 +34,20 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
  26. Parameter Settings for Inferred Entity Instance: memories:memories|ram_test:u2|altsyncram:ram_rtl_0
  27. Parameter Settings for Inferred Entity Instance: memories:memories|ram_test:u3|altsyncram:ram_rtl_0
  28. altsyncram Parameter Settings by Entity Instance
- 29. Port Connectivity Checks: "seg_disp:seg_disp_1"
- 30. Port Connectivity Checks: "control_top:control_top"
- 31. Port Connectivity Checks: "uart_top:uart_top|tx:tx"
- 32. Port Connectivity Checks: "uart_top:uart_top|rx:rx"
- 33. Signal Tap Logic Analyzer Settings
- 34. Post-Synthesis Netlist Statistics for Top Partition
- 35. Elapsed Time Per Partition
- 36. Connections to In-System Debugging Instance "auto_signaltap_0"
- 37. Analysis & Synthesis Messages
- 38. Analysis & Synthesis Suppressed Messages
+ 29. Port Connectivity Checks: "seg_disp:seg_disp_5"
+ 30. Port Connectivity Checks: "seg_disp:seg_disp_4"
+ 31. Port Connectivity Checks: "seg_disp:seg_disp_3"
+ 32. Port Connectivity Checks: "seg_disp:seg_disp_2"
+ 33. Port Connectivity Checks: "seg_disp:seg_disp_1"
+ 34. Port Connectivity Checks: "control_top:control_top"
+ 35. Port Connectivity Checks: "uart_top:uart_top|tx:tx"
+ 36. Port Connectivity Checks: "uart_top:uart_top|rx:rx"
+ 37. Signal Tap Logic Analyzer Settings
+ 38. Post-Synthesis Netlist Statistics for Top Partition
+ 39. Elapsed Time Per Partition
+ 40. Connections to In-System Debugging Instance "auto_signaltap_0"
+ 41. Analysis & Synthesis Messages
+ 42. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -70,16 +74,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Sep  6 07:36:27 2025          ;
+; Analysis & Synthesis Status        ; Successful - Sat Sep  6 14:25:44 2025          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; PE2526                                         ;
 ; Top-level Entity Name              ; PE_FPGA_top                                    ;
 ; Family                             ; MAX 10                                         ;
-; Total logic elements               ; 1,242                                          ;
-;     Total combinational functions  ; 837                                            ;
-;     Dedicated logic registers      ; 926                                            ;
-; Total registers                    ; 926                                            ;
-; Total pins                         ; 34                                             ;
+; Total logic elements               ; 1,284                                          ;
+;     Total combinational functions  ; 878                                            ;
+;     Dedicated logic registers      ; 944                                            ;
+; Total registers                    ; 944                                            ;
+; Total pins                         ; 66                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 112,128                                        ;
 ; Embedded Multiplier 9-bit elements ; 0                                              ;
@@ -272,31 +276,31 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+---------------------+
 ; Resource                                    ; Usage               ;
 +---------------------------------------------+---------------------+
-; Estimated Total logic elements              ; 1,242               ;
+; Estimated Total logic elements              ; 1,284               ;
 ;                                             ;                     ;
-; Total combinational functions               ; 837                 ;
+; Total combinational functions               ; 878                 ;
 ; Logic element usage by number of LUT inputs ;                     ;
-;     -- 4 input functions                    ; 336                 ;
-;     -- 3 input functions                    ; 179                 ;
-;     -- <=2 input functions                  ; 322                 ;
+;     -- 4 input functions                    ; 354                 ;
+;     -- 3 input functions                    ; 199                 ;
+;     -- <=2 input functions                  ; 325                 ;
 ;                                             ;                     ;
 ; Logic elements by mode                      ;                     ;
-;     -- normal mode                          ; 617                 ;
+;     -- normal mode                          ; 658                 ;
 ;     -- arithmetic mode                      ; 220                 ;
 ;                                             ;                     ;
-; Total registers                             ; 926                 ;
-;     -- Dedicated logic registers            ; 926                 ;
+; Total registers                             ; 944                 ;
+;     -- Dedicated logic registers            ; 944                 ;
 ;     -- I/O registers                        ; 0                   ;
 ;                                             ;                     ;
-; I/O pins                                    ; 34                  ;
+; I/O pins                                    ; 66                  ;
 ; Total memory bits                           ; 112128              ;
 ;                                             ;                     ;
 ; Embedded Multiplier 9-bit elements          ; 0                   ;
 ;                                             ;                     ;
 ; Maximum fan-out node                        ; MAX10_CLK1_50~input ;
-; Maximum fan-out                             ; 662                 ;
-; Total fan-out                               ; 7388                ;
-; Average fan-out                             ; 3.76                ;
+; Maximum fan-out                             ; 680                 ;
+; Total fan-out                               ; 7619                ;
+; Average fan-out                             ; 3.65                ;
 +---------------------------------------------+---------------------+
 
 
@@ -305,10 +309,10 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                     ; Entity Name                       ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |PE_FPGA_top                                                                                                                            ; 837 (25)            ; 926 (0)                   ; 112128      ; 0          ; 0            ; 0       ; 0         ; 34   ; 0            ; 0          ; |PE_FPGA_top                                                                                                                                                                                                                                                                                                                                            ; PE_FPGA_top                       ; work         ;
-;    |control_top:control_top|                                                                                                            ; 31 (0)              ; 29 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|control_top:control_top                                                                                                                                                                                                                                                                                                                    ; control_top                       ; work         ;
-;       |uart_tst:uart_tst|                                                                                                               ; 31 (31)             ; 29 (29)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|control_top:control_top|uart_tst:uart_tst                                                                                                                                                                                                                                                                                                  ; uart_tst                          ; work         ;
-;    |memories:memories|                                                                                                                  ; 62 (62)             ; 49 (49)                   ; 98304       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|memories:memories                                                                                                                                                                                                                                                                                                                          ; memories                          ; work         ;
+; |PE_FPGA_top                                                                                                                            ; 878 (25)            ; 944 (0)                   ; 112128      ; 0          ; 0            ; 0       ; 0         ; 66   ; 0            ; 0          ; |PE_FPGA_top                                                                                                                                                                                                                                                                                                                                            ; PE_FPGA_top                       ; work         ;
+;    |control_top:control_top|                                                                                                            ; 42 (0)              ; 31 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|control_top:control_top                                                                                                                                                                                                                                                                                                                    ; control_top                       ; work         ;
+;       |uart_tst:uart_tst|                                                                                                               ; 42 (42)             ; 31 (31)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|control_top:control_top|uart_tst:uart_tst                                                                                                                                                                                                                                                                                                  ; uart_tst                          ; work         ;
+;    |memories:memories|                                                                                                                  ; 61 (61)             ; 49 (49)                   ; 98304       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|memories:memories                                                                                                                                                                                                                                                                                                                          ; memories                          ; work         ;
 ;       |ram_test:u1|                                                                                                                     ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|memories:memories|ram_test:u1                                                                                                                                                                                                                                                                                                              ; ram_test                          ; work         ;
 ;          |altsyncram:ram_rtl_0|                                                                                                         ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|memories:memories|ram_test:u1|altsyncram:ram_rtl_0                                                                                                                                                                                                                                                                                         ; altsyncram                        ; work         ;
 ;             |altsyncram_mcd1:auto_generated|                                                                                            ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|memories:memories|ram_test:u1|altsyncram:ram_rtl_0|altsyncram_mcd1:auto_generated                                                                                                                                                                                                                                                          ; altsyncram_mcd1                   ; work         ;
@@ -318,7 +322,8 @@ https://fpgasoftware.intel.com/eula.
 ;       |ram_test:u3|                                                                                                                     ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|memories:memories|ram_test:u3                                                                                                                                                                                                                                                                                                              ; ram_test                          ; work         ;
 ;          |altsyncram:ram_rtl_0|                                                                                                         ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|memories:memories|ram_test:u3|altsyncram:ram_rtl_0                                                                                                                                                                                                                                                                                         ; altsyncram                        ; work         ;
 ;             |altsyncram_mcd1:auto_generated|                                                                                            ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|memories:memories|ram_test:u3|altsyncram:ram_rtl_0|altsyncram_mcd1:auto_generated                                                                                                                                                                                                                                                          ; altsyncram_mcd1                   ; work         ;
-;    |sig_control:sig_control|                                                                                                            ; 55 (55)             ; 34 (34)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|sig_control:sig_control                                                                                                                                                                                                                                                                                                                    ; sig_control                       ; work         ;
+;    |seg_disp:seg_disp_0|                                                                                                                ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|seg_disp:seg_disp_0                                                                                                                                                                                                                                                                                                                        ; seg_disp                          ; work         ;
+;    |sig_control:sig_control|                                                                                                            ; 54 (54)             ; 34 (34)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|sig_control:sig_control                                                                                                                                                                                                                                                                                                                    ; sig_control                       ; work         ;
 ;    |sld_hub:auto_hub|                                                                                                                   ; 123 (1)             ; 90 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                           ; sld_hub                           ; altera_sld   ;
 ;       |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric| ; 122 (0)             ; 90 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                           ; alt_sld_fab_with_jtag_input       ; altera_sld   ;
 ;          |alt_sld_fab:instrumentation_fabric|                                                                                           ; 122 (0)             ; 90 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                                                                                        ; alt_sld_fab                       ; alt_sld_fab  ;
@@ -388,8 +393,8 @@ https://fpgasoftware.intel.com/eula.
 ;                |lpm_shiftreg:ram_data_shift_out|                                                                                        ; 27 (27)             ; 27 (27)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:ram_data_shift_out                                                                                                               ; lpm_shiftreg                      ; work         ;
 ;                |lpm_shiftreg:status_data_shift_out|                                                                                     ; 19 (19)             ; 19 (19)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:status_data_shift_out                                                                                                            ; lpm_shiftreg                      ; work         ;
 ;             |sld_rom_sr:crc_rom_sr|                                                                                                     ; 30 (30)             ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_rom_sr:crc_rom_sr                                                                                                                                                                                                          ; sld_rom_sr                        ; work         ;
-;    |uart_top:uart_top|                                                                                                                  ; 131 (0)             ; 89 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|uart_top:uart_top                                                                                                                                                                                                                                                                                                                          ; uart_top                          ; work         ;
-;       |rx:rx|                                                                                                                           ; 59 (59)             ; 41 (41)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|uart_top:uart_top|rx:rx                                                                                                                                                                                                                                                                                                                    ; rx                                ; work         ;
+;    |uart_top:uart_top|                                                                                                                  ; 156 (0)             ; 105 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|uart_top:uart_top                                                                                                                                                                                                                                                                                                                          ; uart_top                          ; work         ;
+;       |rx:rx|                                                                                                                           ; 84 (84)             ; 57 (57)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|uart_top:uart_top|rx:rx                                                                                                                                                                                                                                                                                                                    ; rx                                ; work         ;
 ;       |tx:tx|                                                                                                                           ; 72 (72)             ; 48 (48)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |PE_FPGA_top|uart_top:uart_top|tx:tx                                                                                                                                                                                                                                                                                                                    ; tx                                ; work         ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -459,42 +464,40 @@ Encoding Type:  One-Hot
 +----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                               ;
-+-------------------------------------------------------------+--------------------------------------------------------------------+
-; Register name                                               ; Reason for Removal                                                 ;
-+-------------------------------------------------------------+--------------------------------------------------------------------+
-; uart_top:uart_top|tx:tx|shift_reg[9]                        ; Stuck at VCC due to stuck port data_in                             ;
-; control_top:control_top|uart_tst:uart_tst|svn_seg_0[3]      ; Merged with control_top:control_top|uart_tst:uart_tst|svn_seg_0[1] ;
-; memories:memories|we3                                       ; Merged with memories:memories|we2                                  ;
-; control_top:control_top|uart_tst:uart_tst|svn_seg_0[2]      ; Stuck at GND due to stuck port data_in                             ;
-; uart_top:uart_top|tx:tx|baud_div[0..2,5,7..9,11,13..31]     ; Stuck at GND due to stuck port data_in                             ;
-; control_top:control_top|uart_tst:uart_tst|svn_seg_0[1]      ; Stuck at VCC due to stuck port data_in                             ;
-; control_top:control_top|uart_tst:uart_tst|states_leds[5..8] ; Stuck at GND due to stuck port data_in                             ;
-; memories:memories|current_state.STATE6                      ; Lost fanout                                                        ;
-; control_top:control_top|uart_tst:uart_tst|state.STATE5      ; Lost fanout                                                        ;
-; control_top:control_top|uart_tst:uart_tst|state.STATE6      ; Lost fanout                                                        ;
-; control_top:control_top|uart_tst:uart_tst|state.STATE7      ; Lost fanout                                                        ;
-; control_top:control_top|uart_tst:uart_tst|state.STATE8      ; Lost fanout                                                        ;
-; control_top:control_top|uart_tst:uart_tst|state~2           ; Lost fanout                                                        ;
-; control_top:control_top|uart_tst:uart_tst|state~3           ; Lost fanout                                                        ;
-; control_top:control_top|uart_tst:uart_tst|state~4           ; Lost fanout                                                        ;
-; control_top:control_top|uart_tst:uart_tst|state~5           ; Lost fanout                                                        ;
-; memories:memories|current_state~4                           ; Lost fanout                                                        ;
-; memories:memories|current_state~5                           ; Lost fanout                                                        ;
-; memories:memories|current_state~6                           ; Lost fanout                                                        ;
-; memories:memories|current_state.STATE4                      ; Stuck at GND due to stuck port data_in                             ;
-; memories:memories|current_state.STATE7                      ; Stuck at GND due to stuck port data_in                             ;
-; memories:memories|we1                                       ; Merged with memories:memories|mem_wrd_start                        ;
-; memories:memories|current_state.STATE8                      ; Merged with memories:memories|current_state.STATE5                 ;
-; uart_top:uart_top|tx:tx|baud_div[3,4,6,10,12]               ; Merged with memories:memories|current_state.STATE0                 ;
-; memories:memories|rd                                        ; Stuck at GND due to stuck port data_in                             ;
-; control_top:control_top|uart_tst:uart_tst|state.STATE4      ; Stuck at GND due to stuck port data_in                             ;
-; memories:memories|current_state.STATE5                      ; Stuck at GND due to stuck port data_in                             ;
-; control_top:control_top|uart_tst:uart_tst|state.STATE9      ; Stuck at GND due to stuck port data_in                             ;
-; control_top:control_top|uart_tst:uart_tst|states_leds[4]    ; Stuck at GND due to stuck port data_in                             ;
-; Total Number of Removed Registers = 62                      ;                                                                    ;
-+-------------------------------------------------------------+--------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                               ;
++-------------------------------------------------------------+----------------------------------------------------+
+; Register name                                               ; Reason for Removal                                 ;
++-------------------------------------------------------------+----------------------------------------------------+
+; uart_top:uart_top|tx:tx|shift_reg[9]                        ; Stuck at VCC due to stuck port data_in             ;
+; memories:memories|we3                                       ; Merged with memories:memories|we2                  ;
+; control_top:control_top|uart_tst:uart_tst|svn_seg_0[3]      ; Stuck at GND due to stuck port data_in             ;
+; uart_top:uart_top|tx:tx|baud_div[0..2,5,7..9,11,13..31]     ; Stuck at GND due to stuck port data_in             ;
+; control_top:control_top|uart_tst:uart_tst|states_leds[5..8] ; Stuck at GND due to stuck port data_in             ;
+; memories:memories|current_state.STATE6                      ; Lost fanout                                        ;
+; control_top:control_top|uart_tst:uart_tst|state.STATE5      ; Lost fanout                                        ;
+; control_top:control_top|uart_tst:uart_tst|state.STATE6      ; Lost fanout                                        ;
+; control_top:control_top|uart_tst:uart_tst|state.STATE7      ; Lost fanout                                        ;
+; control_top:control_top|uart_tst:uart_tst|state.STATE8      ; Lost fanout                                        ;
+; control_top:control_top|uart_tst:uart_tst|state~2           ; Lost fanout                                        ;
+; control_top:control_top|uart_tst:uart_tst|state~3           ; Lost fanout                                        ;
+; control_top:control_top|uart_tst:uart_tst|state~4           ; Lost fanout                                        ;
+; control_top:control_top|uart_tst:uart_tst|state~5           ; Lost fanout                                        ;
+; memories:memories|current_state~4                           ; Lost fanout                                        ;
+; memories:memories|current_state~5                           ; Lost fanout                                        ;
+; memories:memories|current_state~6                           ; Lost fanout                                        ;
+; memories:memories|current_state.STATE4                      ; Stuck at GND due to stuck port data_in             ;
+; memories:memories|current_state.STATE7                      ; Stuck at GND due to stuck port data_in             ;
+; memories:memories|we1                                       ; Merged with memories:memories|mem_wrd_start        ;
+; memories:memories|current_state.STATE8                      ; Merged with memories:memories|current_state.STATE5 ;
+; uart_top:uart_top|tx:tx|baud_div[3,4,6,10,12]               ; Merged with memories:memories|current_state.STATE0 ;
+; memories:memories|rd                                        ; Stuck at GND due to stuck port data_in             ;
+; control_top:control_top|uart_tst:uart_tst|state.STATE4      ; Stuck at GND due to stuck port data_in             ;
+; memories:memories|current_state.STATE5                      ; Stuck at GND due to stuck port data_in             ;
+; control_top:control_top|uart_tst:uart_tst|state.STATE9      ; Stuck at GND due to stuck port data_in             ;
+; control_top:control_top|uart_tst:uart_tst|states_leds[4]    ; Stuck at GND due to stuck port data_in             ;
+; Total Number of Removed Registers = 60                      ;                                                    ;
++-------------------------------------------------------------+----------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -514,12 +517,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 926   ;
-; Number of registers using Synchronous Clear  ; 121   ;
-; Number of registers using Synchronous Load   ; 107   ;
+; Total registers                              ; 944   ;
+; Number of registers using Synchronous Clear  ; 131   ;
+; Number of registers using Synchronous Load   ; 108   ;
 ; Number of registers using Asynchronous Clear ; 348   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 482   ;
+; Number of registers using Clock Enable       ; 493   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -530,17 +533,17 @@ Encoding Type:  One-Hot
 ; Inverted Register                                                                                                                                                                                                                                                                                                               ; Fan out ;
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; uart_top:uart_top|tx:tx|tx                                                                                                                                                                                                                                                                                                      ; 3       ;
-; sig_control:sig_control|por_counter[0]                                                                                                                                                                                                                                                                                          ; 15      ;
-; sig_control:sig_control|por_counter[1]                                                                                                                                                                                                                                                                                          ; 15      ;
-; uart_top:uart_top|tx:tx|shift_reg[6]                                                                                                                                                                                                                                                                                            ; 1       ;
-; uart_top:uart_top|tx:tx|shift_reg[5]                                                                                                                                                                                                                                                                                            ; 1       ;
-; uart_top:uart_top|tx:tx|shift_reg[4]                                                                                                                                                                                                                                                                                            ; 1       ;
-; uart_top:uart_top|tx:tx|shift_reg[7]                                                                                                                                                                                                                                                                                            ; 1       ;
+; sig_control:sig_control|por_counter[0]                                                                                                                                                                                                                                                                                          ; 24      ;
+; sig_control:sig_control|por_counter[1]                                                                                                                                                                                                                                                                                          ; 24      ;
 ; uart_top:uart_top|tx:tx|shift_reg[8]                                                                                                                                                                                                                                                                                            ; 1       ;
 ; uart_top:uart_top|tx:tx|shift_reg[2]                                                                                                                                                                                                                                                                                            ; 1       ;
 ; uart_top:uart_top|tx:tx|shift_reg[1]                                                                                                                                                                                                                                                                                            ; 1       ;
 ; uart_top:uart_top|tx:tx|shift_reg[0]                                                                                                                                                                                                                                                                                            ; 1       ;
 ; uart_top:uart_top|tx:tx|shift_reg[3]                                                                                                                                                                                                                                                                                            ; 1       ;
+; uart_top:uart_top|tx:tx|shift_reg[6]                                                                                                                                                                                                                                                                                            ; 1       ;
+; uart_top:uart_top|tx:tx|shift_reg[5]                                                                                                                                                                                                                                                                                            ; 1       ;
+; uart_top:uart_top|tx:tx|shift_reg[4]                                                                                                                                                                                                                                                                                            ; 1       ;
+; uart_top:uart_top|tx:tx|shift_reg[7]                                                                                                                                                                                                                                                                                            ; 1       ;
 ; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[2] ; 2       ;
 ; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[1] ; 3       ;
 ; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[8]                                                                                                                                                   ; 1       ;
@@ -573,14 +576,15 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |PE_FPGA_top|control_top:control_top|uart_tst:uart_tst|svn_seg_0[1]  ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |PE_FPGA_top|uart_top:uart_top|tx:tx|bit_index[0]                    ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |PE_FPGA_top|control_top:control_top|uart_tst:uart_tst|data_to_tx[0] ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |PE_FPGA_top|control_top:control_top|uart_tst:uart_tst|tx_data[2]    ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |PE_FPGA_top|uart_top:uart_top|rx:rx|bit_index[2]                    ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; Yes        ; |PE_FPGA_top|uart_top:uart_top|rx:rx|baud_counter[1]                 ;
-; 4:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |PE_FPGA_top|memories:memories|din[27]                               ;
-; 6:1                ; 10 bits   ; 40 LEs        ; 10 LEs               ; 30 LEs                 ; Yes        ; |PE_FPGA_top|memories:memories|addr[3]                               ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |PE_FPGA_top|uart_top:uart_top|tx:tx|bit_index[2]                    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |PE_FPGA_top|uart_top:uart_top|rx:rx|data_out[5]                     ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |PE_FPGA_top|control_top:control_top|uart_tst:uart_tst|tx_data[3]    ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |PE_FPGA_top|uart_top:uart_top|rx:rx|bit_index[3]                    ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |PE_FPGA_top|control_top:control_top|uart_tst:uart_tst|svn_seg_0[1]  ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; Yes        ; |PE_FPGA_top|uart_top:uart_top|rx:rx|baud_counter[22]                ;
+; 4:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |PE_FPGA_top|memories:memories|din[0]                                ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 10 LEs               ; 30 LEs                 ; Yes        ; |PE_FPGA_top|memories:memories|addr[2]                               ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |PE_FPGA_top|control_top:control_top|uart_tst:uart_tst|data_to_tx[4] ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |PE_FPGA_top|control_top:control_top|uart_tst:uart_tst|state         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------+
 
@@ -942,14 +946,58 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+----------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "seg_disp:seg_disp_1"                                                                                                                                                                    ;
-+--------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port         ; Type  ; Severity ; Details                                                                                                                                                                          ;
-+--------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; val_in       ; Input ; Warning  ; Input port expression (8 bits) is wider than the input port (4 bits) it drives.  The 4 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; val_in[3..0] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                     ;
-+--------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------+
+; Port Connectivity Checks: "seg_disp:seg_disp_5" ;
++--------------+-------+----------+---------------+
+; Port         ; Type  ; Severity ; Details       ;
++--------------+-------+----------+---------------+
+; val_in[2..1] ; Input ; Info     ; Stuck at GND  ;
+; val_in[3]    ; Input ; Info     ; Stuck at VCC  ;
+; val_in[0]    ; Input ; Info     ; Stuck at VCC  ;
++--------------+-------+----------+---------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "seg_disp:seg_disp_4" ;
++--------------+-------+----------+---------------+
+; Port         ; Type  ; Severity ; Details       ;
++--------------+-------+----------+---------------+
+; val_in[2..0] ; Input ; Info     ; Stuck at GND  ;
+; val_in[3]    ; Input ; Info     ; Stuck at VCC  ;
++--------------+-------+----------+---------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "seg_disp:seg_disp_3" ;
++--------------+-------+----------+---------------+
+; Port         ; Type  ; Severity ; Details       ;
++--------------+-------+----------+---------------+
+; val_in[2..1] ; Input ; Info     ; Stuck at VCC  ;
+; val_in[3]    ; Input ; Info     ; Stuck at GND  ;
+; val_in[0]    ; Input ; Info     ; Stuck at GND  ;
++--------------+-------+----------+---------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "seg_disp:seg_disp_2" ;
++--------------+-------+----------+---------------+
+; Port         ; Type  ; Severity ; Details       ;
++--------------+-------+----------+---------------+
+; val_in[1..0] ; Input ; Info     ; Stuck at GND  ;
+; val_in[3]    ; Input ; Info     ; Stuck at GND  ;
+; val_in[2]    ; Input ; Info     ; Stuck at VCC  ;
++--------------+-------+----------+---------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "seg_disp:seg_disp_1" ;
++--------------+-------+----------+---------------+
+; Port         ; Type  ; Severity ; Details       ;
++--------------+-------+----------+---------------+
+; val_in[3..2] ; Input ; Info     ; Stuck at GND  ;
+; val_in[1]    ; Input ; Info     ; Stuck at VCC  ;
+; val_in[0]    ; Input ; Info     ; Stuck at GND  ;
++--------------+-------+----------+---------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -1011,29 +1059,30 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 34                          ;
-; cycloneiii_ff         ; 201                         ;
+; boundary_port         ; 66                          ;
+; cycloneiii_ff         ; 219                         ;
 ;     CLR               ; 7                           ;
 ;     CLR SCLR          ; 32                          ;
-;     ENA               ; 14                          ;
+;     ENA               ; 22                          ;
 ;     ENA CLR           ; 55                          ;
-;     ENA SLD           ; 40                          ;
-;     SCLR              ; 40                          ;
+;     ENA SCLR          ; 2                           ;
+;     ENA SLD           ; 41                          ;
+;     SCLR              ; 48                          ;
 ;     SCLR SLD          ; 1                           ;
-;     plain             ; 12                          ;
-; cycloneiii_lcell_comb ; 306                         ;
+;     plain             ; 11                          ;
+; cycloneiii_lcell_comb ; 353                         ;
 ;     arith             ; 137                         ;
 ;         2 data inputs ; 137                         ;
-;     normal            ; 169                         ;
+;     normal            ; 216                         ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 19                          ;
-;         2 data inputs ; 11                          ;
-;         3 data inputs ; 23                          ;
-;         4 data inputs ; 114                         ;
+;         1 data inputs ; 26                          ;
+;         2 data inputs ; 13                          ;
+;         3 data inputs ; 43                          ;
+;         4 data inputs ; 132                         ;
 ; cycloneiii_ram_block  ; 96                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 3.03                        ;
+; Max LUT depth         ; 7.00                        ;
+; Average LUT depth     ; 3.24                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1147,9 +1196,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Sat Sep  6 07:35:54 2025
+    Info: Processing started: Sat Sep  6 14:25:06 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PE2526 -c PE2526
-Critical Warning (138067): Current license file does not support incremental compilation. The Quartus Prime software removes all the user-specified design partitions in the design automatically.
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file /users/dnld/documents/projects/de10_projects/pe_2526/rtl/seg_disp.v
@@ -1173,17 +1221,16 @@ Info (12021): Found 1 design units, including 1 entities, in source file /users/
 Info (12021): Found 1 design units, including 1 entities, in source file /users/dnld/documents/projects/de10_projects/pe_2526/rtl/pe_fpga_top.v
     Info (12023): Found entity 1: PE_FPGA_top File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 3
 Info (12127): Elaborating entity "PE_FPGA_top" for the top level hierarchy
-Info (12128): Elaborating entity "memories" for hierarchy "memories:memories" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 35
+Info (12128): Elaborating entity "memories" for hierarchy "memories:memories" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 33
 Info (12128): Elaborating entity "ram_test" for hierarchy "memories:memories|ram_test:u1" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/memories.v Line: 20
-Info (12128): Elaborating entity "uart_top" for hierarchy "uart_top:uart_top" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 66
+Info (12128): Elaborating entity "uart_top" for hierarchy "uart_top:uart_top" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 64
 Info (12128): Elaborating entity "rx" for hierarchy "uart_top:uart_top|rx:rx" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/uart_top.v Line: 25
 Info (12128): Elaborating entity "tx" for hierarchy "uart_top:uart_top|tx:tx" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/uart_top.v Line: 26
-Info (12128): Elaborating entity "control_top" for hierarchy "control_top:control_top" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 68
+Info (12128): Elaborating entity "control_top" for hierarchy "control_top:control_top" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 66
 Info (12128): Elaborating entity "uart_tst" for hierarchy "control_top:control_top|uart_tst:uart_tst" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/control/control_top.v Line: 14
-Info (10264): Verilog HDL Case Statement information at uart_tst.v(131): all case item expressions in this case statement are onehot File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/control/uart_tst.v Line: 131
-Info (12128): Elaborating entity "sig_control" for hierarchy "sig_control:sig_control" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 70
-Info (12128): Elaborating entity "seg_disp" for hierarchy "seg_disp:seg_disp_0" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 72
-Critical Warning (138067): Current license file does not support incremental compilation. The Quartus Prime software removes all the user-specified design partitions in the design automatically.
+Info (10264): Verilog HDL Case Statement information at uart_tst.v(134): all case item expressions in this case statement are onehot File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/control/uart_tst.v Line: 134
+Info (12128): Elaborating entity "sig_control" for hierarchy "sig_control:sig_control" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 68
+Info (12128): Elaborating entity "seg_disp" for hierarchy "seg_disp:seg_disp_0" File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 70
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_sf14.tdf
     Info (12023): Found entity 1: altsyncram_sf14 File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Synthesis/db/altsyncram_sf14.tdf Line: 28
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_m7c.tdf
@@ -1204,7 +1251,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_drb File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Synthesis/db/cmpr_drb.tdf Line: 23
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2025.09.06.07:36:12 Progress: Loading sld7505b477/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2025.09.06.14:25:25 Progress: Loading sld7505b477/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -1294,44 +1341,71 @@ Info (12133): Instantiated megafunction "memories:memories|ram_test:u1|altsyncra
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_mcd1.tdf
     Info (12023): Found entity 1: altsyncram_mcd1 File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Synthesis/db/altsyncram_mcd1.tdf Line: 28
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (13000): Registers with preset signals will power-up high File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/tx.v Line: 8
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[2]" is stuck at VCC File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 7
-    Warning (13410): Pin "HEX0[4]" is stuck at VCC File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 7
-    Warning (13410): Pin "HEX0[5]" is stuck at VCC File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 7
-    Warning (13410): Pin "HEX0[6]" is stuck at VCC File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 7
     Warning (13410): Pin "HEX0[7]" is stuck at GND File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 7
     Warning (13410): Pin "HEX1[0]" is stuck at VCC File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 8
-    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 8
+    Warning (13410): Pin "HEX1[1]" is stuck at VCC File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 8
     Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 8
-    Warning (13410): Pin "HEX1[3]" is stuck at GND File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 8
+    Warning (13410): Pin "HEX1[3]" is stuck at VCC File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 8
     Warning (13410): Pin "HEX1[4]" is stuck at VCC File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 8
-    Warning (13410): Pin "HEX1[5]" is stuck at VCC File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 8
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 8
     Warning (13410): Pin "HEX1[6]" is stuck at VCC File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 8
     Warning (13410): Pin "HEX1[7]" is stuck at GND File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 8
-    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 17
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 17
-    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 17
-    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 17
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 17
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 9
+    Warning (13410): Pin "HEX2[1]" is stuck at VCC File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 9
+    Warning (13410): Pin "HEX2[2]" is stuck at VCC File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 9
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 9
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 9
+    Warning (13410): Pin "HEX2[5]" is stuck at VCC File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 9
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 9
+    Warning (13410): Pin "HEX2[7]" is stuck at GND File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 9
+    Warning (13410): Pin "HEX3[0]" is stuck at VCC File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 10
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 10
+    Warning (13410): Pin "HEX3[2]" is stuck at VCC File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 10
+    Warning (13410): Pin "HEX3[3]" is stuck at VCC File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 10
+    Warning (13410): Pin "HEX3[4]" is stuck at VCC File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 10
+    Warning (13410): Pin "HEX3[5]" is stuck at VCC File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 10
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 10
+    Warning (13410): Pin "HEX3[7]" is stuck at GND File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 10
+    Warning (13410): Pin "HEX4[0]" is stuck at VCC File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 11
+    Warning (13410): Pin "HEX4[1]" is stuck at VCC File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 11
+    Warning (13410): Pin "HEX4[2]" is stuck at VCC File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 11
+    Warning (13410): Pin "HEX4[3]" is stuck at VCC File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 11
+    Warning (13410): Pin "HEX4[4]" is stuck at VCC File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 11
+    Warning (13410): Pin "HEX4[5]" is stuck at VCC File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 11
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 11
+    Warning (13410): Pin "HEX4[7]" is stuck at GND File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 11
+    Warning (13410): Pin "HEX5[0]" is stuck at VCC File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 12
+    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 12
+    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 12
+    Warning (13410): Pin "HEX5[3]" is stuck at VCC File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 12
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 12
+    Warning (13410): Pin "HEX5[5]" is stuck at VCC File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 12
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 12
+    Warning (13410): Pin "HEX5[7]" is stuck at GND File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 12
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 15
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 15
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 15
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 15
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v Line: 15
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
 Info (17049): 12 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Synthesis/output_files/PE2526.map.smsg
 Info (35024): Successfully connected in-system debug instance "auto_signaltap_0" to all 87 required data inputs, trigger inputs, acquisition clocks, and dynamic pins
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1420 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1495 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 7 input pins
-    Info (21059): Implemented 31 output pins
-    Info (21061): Implemented 1258 logic cells
+    Info (21059): Implemented 63 output pins
+    Info (21061): Implemented 1301 logic cells
     Info (21064): Implemented 123 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 26 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 51 warnings
     Info: Peak virtual memory: 4907 megabytes
-    Info: Processing ended: Sat Sep  6 07:36:27 2025
-    Info: Elapsed time: 00:00:33
-    Info: Total CPU time (on all processors): 00:01:01
+    Info: Processing ended: Sat Sep  6 14:25:44 2025
+    Info: Elapsed time: 00:00:38
+    Info: Total CPU time (on all processors): 00:01:13
 
 
 +------------------------------------------+

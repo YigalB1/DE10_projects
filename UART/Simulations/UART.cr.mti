@@ -1,0 +1,64 @@
+C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/UART_top.v {1 {vlog -work work -stats=none C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/UART_top.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module UART_top
+
+Top level modules:
+	UART_top
+
+} {} {}} C:/Users/DNLD/Documents/Projects/DE10_projects/UART/TestBench/UART_tb.v {1 {vlog -work work -stats=none C:/Users/DNLD/Documents/Projects/DE10_projects/UART/TestBench/UART_tb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module UART_tb
+
+Top level modules:
+	UART_tb
+
+} {} {}} C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/uart_tx.v {1 {vlog -work work -stats=none C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/uart_tx.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module uart_tx
+
+Top level modules:
+	uart_tx
+
+} {} {}} C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/tx_repeater.v {1 {vlog -work work -stats=none C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/tx_repeater.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tx_repeater
+
+Top level modules:
+	tx_repeater
+
+} {} {}} C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/tx_activate.v {1 {vlog -work work -stats=none C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/tx_activate.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tx_activate
+
+Top level modules:
+	tx_activate
+
+} {} {}} C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/UART.v {1 {vlog -work work -stats=none C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/UART.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module UART
+
+Top level modules:
+	UART
+
+} {} {}} C:/Users/DNLD/Documents/Projects/DE10_projects/UART/TestBench/uart_tb2.v {1 {vlog -work work -stats=none C:/Users/DNLD/Documents/Projects/DE10_projects/UART/TestBench/uart_tb2.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module UART_tb2
+
+Top level modules:
+	UART_tb2
+
+} {} {}} C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/uart_rx.v {1 {vlog -work work -stats=none C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/uart_rx.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module uart_rx
+
+Top level modules:
+	uart_rx
+
+} {} {}} C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/control.v {1 {vlog -work work -stats=none C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/control.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module control
+
+Top level modules:
+	control
+
+} {} {}}

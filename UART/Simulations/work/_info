@@ -1,0 +1,224 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/DNLD/Documents/Projects/DE10_projects/7seg/Simulation
+vcontrol
+Z0 !s110 1742310141
+!i10b 1
+!s100 ?<;W[I0ZLc1[E4OdWDk^Y1
+IRe4h8nVHJQ6KMCBcHhZ8P1
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/DNLD/Documents/Projects/DE10_projects/UART/Simulations
+w1740215273
+8C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/control.v
+FC:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/control.v
+L0 6
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1742310141.000000
+!s107 C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/control.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/control.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vtx_activate
+R0
+!i10b 1
+!s100 ZL^2@z?DT?4[TkLXFAT^91
+ImNH105f[dAhGc>Q1R0X=n2
+R1
+R2
+w1740074734
+8C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/tx_activate.v
+FC:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/tx_activate.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/tx_activate.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/tx_activate.v|
+!i113 1
+R5
+R6
+vtx_repeater
+R0
+!i10b 1
+!s100 ZEzZALMfk2<gQ_XKaYfRL1
+I[M7cfBmOa:42V[0<O]YQ93
+R1
+R2
+w1740319442
+8C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/tx_repeater.v
+FC:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/tx_repeater.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/tx_repeater.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/tx_repeater.v|
+!i113 1
+R5
+R6
+vUART
+R0
+!i10b 1
+!s100 1H4OAcm;Jm:LaZG@;iK]`2
+ICJ_TLfiM4kZ?G[[FT?3382
+R1
+R2
+w1740122721
+8C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/UART.v
+FC:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/UART.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/UART.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/UART.v|
+!i113 1
+R5
+R6
+n@u@a@r@t
+vuart_ctrl
+!s110 1739645589
+!i10b 1
+!s100 4e6K:@=5[TZ:6C3Saz3SZ1
+I_D4VKo[VbVK7JGTmM:ADT1
+R1
+R2
+w1739645448
+8C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/uart_ctrl.v
+FC:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/uart_ctrl.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1739645589.000000
+!s107 C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/uart_ctrl.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/uart_ctrl.v|
+!i113 1
+R5
+R6
+vuart_rx
+R0
+!i10b 1
+!s100 G;B=[?[Aj]9X4N?[O0T;=2
+IV:hM8^NBATK18lVAnaFPL3
+R1
+R2
+w1740055931
+8C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/uart_rx.v
+FC:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/uart_rx.v
+L0 16
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/uart_rx.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/uart_rx.v|
+!i113 1
+R5
+R6
+vUART_tb
+R0
+!i10b 1
+!s100 SkZV?^CNM3MEhj=K=XlkB2
+I^Whf122fo0^FdB@]ikLkC2
+R1
+R2
+w1740116889
+8C:/Users/DNLD/Documents/Projects/DE10_projects/UART/TestBench/UART_tb.v
+FC:/Users/DNLD/Documents/Projects/DE10_projects/UART/TestBench/UART_tb.v
+L0 6
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/DNLD/Documents/Projects/DE10_projects/UART/TestBench/UART_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/DNLD/Documents/Projects/DE10_projects/UART/TestBench/UART_tb.v|
+!i113 1
+R5
+R6
+n@u@a@r@t_tb
+vUART_tb2
+R0
+!i10b 1
+!s100 JzLJ;Sz]kh;Z;a1=8ECEo3
+InozYHfIjB8jF=IC>^UmTL3
+R1
+R2
+w1740170945
+8C:/Users/DNLD/Documents/Projects/DE10_projects/UART/TestBench/uart_tb2.v
+FC:/Users/DNLD/Documents/Projects/DE10_projects/UART/TestBench/uart_tb2.v
+L0 8
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/DNLD/Documents/Projects/DE10_projects/UART/TestBench/uart_tb2.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/DNLD/Documents/Projects/DE10_projects/UART/TestBench/uart_tb2.v|
+!i113 1
+R5
+R6
+n@u@a@r@t_tb2
+vUART_top
+R0
+!i10b 1
+!s100 9CK?YiW6<nY:a<dj:>eo13
+I9edP^UaF8=GKzc5MbOMRb0
+R1
+R2
+w1740210460
+8C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/UART_top.v
+FC:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/UART_top.v
+L0 14
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/UART_top.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/UART_top.v|
+!i113 1
+R5
+R6
+n@u@a@r@t_top
+vuart_tx
+R0
+!i10b 1
+!s100 gXdAFmHc5ln0dM9^DYKZD2
+IWTlc`CP`bbH3l7g2fkCSE1
+R1
+R2
+w1739647269
+8C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/uart_tx.v
+FC:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/uart_tx.v
+L0 15
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/uart_tx.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/DNLD/Documents/Projects/DE10_projects/UART/RTL/uart_tx.v|
+!i113 1
+R5
+R6

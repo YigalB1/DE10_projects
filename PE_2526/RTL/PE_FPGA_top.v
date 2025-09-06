@@ -6,13 +6,11 @@ input	MAX10_CLK1_50,
 
 	output		     [7:0]		HEX0,
 	output		     [7:0]		HEX1,
-/*
-	
 	output		     [7:0]		HEX2,
 	output		     [7:0]		HEX3,
 	output		     [7:0]		HEX4,
 	output		     [7:0]		HEX5,
-*/
+
 	input 		     [1:0]		KEY,
 	output		     [9:0]		LEDR,
 //	input 		     [9:0]		SW,
@@ -70,5 +68,9 @@ control_top control_top(MAX10_CLK1_50,reset,tx_data,tx_start,tx_busy,rx_data,rx_
 sig_control sig_control(MAX10_CLK1_50,KEY,reset,rst_led,clk_1hz);
 
 seg_disp seg_disp_0(val_in_0,HEX0); 
-seg_disp seg_disp_1(8'b0_1001111,HEX1);  // should present 3 on the second 7seg
+seg_disp seg_disp_1(4'd2,HEX1);  
+seg_disp seg_disp_2(4'd4,HEX2); 
+seg_disp seg_disp_3(4'd6,HEX3); 
+seg_disp seg_disp_4(4'd8,HEX4); 
+seg_disp seg_disp_5(4'd9,HEX5);  
 endmodule

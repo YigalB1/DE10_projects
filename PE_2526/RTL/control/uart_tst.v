@@ -82,33 +82,36 @@ module uart_tst (
                                         // Clear the start signal after one cycle
                 tx_start <= 1'b0;
                 data_to_tx <= data_to_tx+8'b1; // increment the data to transmit next time
-                svn_seg_0 <= 4'hA; // display A on 7 seg
+                svn_seg_0 <= 4'd1; // display 1
                 states_leds[1] <= 1'b1; // indicate we are in state 1
             end
             else if (state == STATE2) begin // wait for rx data ready
-                svn_seg_0 <= 4'hB; // display B on 7 seg
+                svn_seg_0 <= 4'd2; // display 2
                 states_leds[2] <= 1'b1; // indicate we are in state 2   
             end
             else if (state == STATE3) begin //wait here
-                states_leds[3] <= 1'b1; // indicate we are in state 0   
+                data_to_tx <= rx_data + 8'b1; // increment the received data and send it back
+                states_leds[3] <= 1'b1; // indicate we are in state 3
+                svn_seg_0 <= 4'd3; // display 3
             end
             else if (state == STATE4) begin // wait for tranmit end
-                states_leds[4] <= 1'b1; // indicate we are in state 3   
+                states_leds[4] <= 1'b1; // indicate we are in state 4   
+                svn_seg_0 <= 4'd4; // display 4
             end
             else if (state == STATE5) begin // wait for tranmit end
-                states_leds[5] <= 1'b1; // indicate we are in state 4   
+                states_leds[5] <= 1'b1; // indicate we are in state 5   
             end
             else if (state == STATE6) begin // wait for tranmit end
-                states_leds[6] <= 1'b1; // indicate we are in state 5   
+                states_leds[6] <= 1'b1; // indicate we are in state 6   
             end
             else if (state == STATE7) begin // wait for tranmit end
-                states_leds[7] <= 1'b1; // indicate we are in state 6   
+                states_leds[7] <= 1'b1; // indicate we are in state 7   
             end
             else if (state == STATE8) begin // wait for tranmit end
-                states_leds[8] <= 1'b1; // indicate we are in state 7   
+                states_leds[8] <= 1'b1; // indicate we are in state 8   
             end
             else if (state == STATE9) begin // wait for tranmit end
-                states_leds[9] <= 1'b1; // indicate we are in state 8
+                states_leds[9] <= 1'b1; // indicate we are in state 9
             end
             else if (state == STATE10) begin // Lopp back mode, send one
                 data_to_tx <= data_to_tx+8'b1;

@@ -1,0 +1,137 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'MAX10_CLK1_50'
+Slack : -3.862
+TNS   : -192.619
+
+Type  : Slow 1200mV 85C Model Setup 'UART:my_uart|uart_rx:uart_r|r_Rx_DV'
+Slack : -2.094
+TNS   : -13.876
+
+Type  : Slow 1200mV 85C Model Setup 'tx_repeater:tx_rpt|current_state.STATE1'
+Slack : -1.065
+TNS   : -7.835
+
+Type  : Slow 1200mV 85C Model Hold 'MAX10_CLK1_50'
+Slack : 0.327
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'tx_repeater:tx_rpt|current_state.STATE1'
+Slack : 0.637
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'UART:my_uart|uart_rx:uart_r|r_Rx_DV'
+Slack : 0.793
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'MAX10_CLK1_50'
+Slack : -1.009
+TNS   : -1.822
+
+Type  : Slow 1200mV 85C Model Removal 'MAX10_CLK1_50'
+Slack : 0.838
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'MAX10_CLK1_50'
+Slack : -3.000
+TNS   : -116.646
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'UART:my_uart|uart_rx:uart_r|r_Rx_DV'
+Slack : 0.317
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'tx_repeater:tx_rpt|current_state.STATE1'
+Slack : 0.367
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'MAX10_CLK1_50'
+Slack : -3.460
+TNS   : -169.719
+
+Type  : Slow 1200mV 0C Model Setup 'UART:my_uart|uart_rx:uart_r|r_Rx_DV'
+Slack : -1.915
+TNS   : -12.803
+
+Type  : Slow 1200mV 0C Model Setup 'tx_repeater:tx_rpt|current_state.STATE1'
+Slack : -0.875
+TNS   : -6.408
+
+Type  : Slow 1200mV 0C Model Hold 'MAX10_CLK1_50'
+Slack : 0.297
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'tx_repeater:tx_rpt|current_state.STATE1'
+Slack : 0.590
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'UART:my_uart|uart_rx:uart_r|r_Rx_DV'
+Slack : 0.837
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'MAX10_CLK1_50'
+Slack : -0.824
+TNS   : -1.319
+
+Type  : Slow 1200mV 0C Model Removal 'MAX10_CLK1_50'
+Slack : 0.773
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'MAX10_CLK1_50'
+Slack : -3.000
+TNS   : -116.646
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'UART:my_uart|uart_rx:uart_r|r_Rx_DV'
+Slack : 0.382
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'tx_repeater:tx_rpt|current_state.STATE1'
+Slack : 0.438
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'MAX10_CLK1_50'
+Slack : -1.443
+TNS   : -46.484
+
+Type  : Fast 1200mV 0C Model Setup 'UART:my_uart|uart_rx:uart_r|r_Rx_DV'
+Slack : -0.657
+TNS   : -3.871
+
+Type  : Fast 1200mV 0C Model Setup 'tx_repeater:tx_rpt|current_state.STATE1'
+Slack : 0.029
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'MAX10_CLK1_50'
+Slack : 0.150
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'tx_repeater:tx_rpt|current_state.STATE1'
+Slack : 0.244
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'UART:my_uart|uart_rx:uart_r|r_Rx_DV'
+Slack : 0.492
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'MAX10_CLK1_50'
+Slack : -0.013
+TNS   : -0.013
+
+Type  : Fast 1200mV 0C Model Removal 'MAX10_CLK1_50'
+Slack : 0.399
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'MAX10_CLK1_50'
+Slack : -3.000
+TNS   : -111.958
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'UART:my_uart|uart_rx:uart_r|r_Rx_DV'
+Slack : 0.339
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'tx_repeater:tx_rpt|current_state.STATE1'
+Slack : 0.345
+TNS   : 0.000
+
+------------------------------------------------------------

@@ -1,0 +1,24 @@
+
+State Machine - |UART_top|tx_repeater:tx_rpt|current_state
+Name current_state.STATE3 current_state.STATE2 current_state.STATE1 current_state.STATE0 current_state.STATE4 
+current_state.STATE0 0 0 0 0 0 
+current_state.STATE1 0 0 1 1 0 
+current_state.STATE2 0 1 0 1 0 
+current_state.STATE3 1 0 0 1 0 
+current_state.STATE4 0 0 0 1 1 
+
+State Machine - |UART_top|UART:my_uart|uart_tx:uart_t|r_SM_Main
+Name r_SM_Main.s_TX_STOP_BIT r_SM_Main.s_TX_DATA_BITS r_SM_Main.s_TX_START_BIT r_SM_Main.000 r_SM_Main.s_CLEANUP 
+r_SM_Main.000 0 0 0 0 0 
+r_SM_Main.s_TX_START_BIT 0 0 1 1 0 
+r_SM_Main.s_TX_DATA_BITS 0 1 0 1 0 
+r_SM_Main.s_TX_STOP_BIT 1 0 0 1 0 
+r_SM_Main.s_CLEANUP 0 0 0 1 1 
+
+State Machine - |UART_top|UART:my_uart|uart_rx:uart_r|r_SM_Main
+Name r_SM_Main.s_RX_STOP_BIT r_SM_Main.s_RX_DATA_BITS r_SM_Main.s_RX_START_BIT r_SM_Main.000 r_SM_Main.s_CLEANUP 
+r_SM_Main.000 0 0 0 0 0 
+r_SM_Main.s_RX_START_BIT 0 0 1 1 0 
+r_SM_Main.s_RX_DATA_BITS 0 1 0 1 0 
+r_SM_Main.s_RX_STOP_BIT 1 0 0 1 0 
+r_SM_Main.s_CLEANUP 0 0 0 1 1 

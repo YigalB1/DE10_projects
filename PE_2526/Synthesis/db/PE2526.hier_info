@@ -1,38 +1,70 @@
 |PE_FPGA_top
 MAX10_CLK1_50 => MAX10_CLK1_50.IN4
-HEX0[0] << seg_disp:seg_disp_0.port1
-HEX0[1] << seg_disp:seg_disp_0.port1
-HEX0[2] << seg_disp:seg_disp_0.port1
-HEX0[3] << seg_disp:seg_disp_0.port1
-HEX0[4] << seg_disp:seg_disp_0.port1
-HEX0[5] << seg_disp:seg_disp_0.port1
-HEX0[6] << seg_disp:seg_disp_0.port1
-HEX0[7] << seg_disp:seg_disp_0.port1
-HEX1[0] << seg_disp:seg_disp_1.port1
-HEX1[1] << seg_disp:seg_disp_1.port1
-HEX1[2] << seg_disp:seg_disp_1.port1
-HEX1[3] << seg_disp:seg_disp_1.port1
-HEX1[4] << seg_disp:seg_disp_1.port1
-HEX1[5] << seg_disp:seg_disp_1.port1
-HEX1[6] << seg_disp:seg_disp_1.port1
-HEX1[7] << seg_disp:seg_disp_1.port1
+HEX0[0] <= seg_disp:seg_disp_0.port1
+HEX0[1] <= seg_disp:seg_disp_0.port1
+HEX0[2] <= seg_disp:seg_disp_0.port1
+HEX0[3] <= seg_disp:seg_disp_0.port1
+HEX0[4] <= seg_disp:seg_disp_0.port1
+HEX0[5] <= seg_disp:seg_disp_0.port1
+HEX0[6] <= seg_disp:seg_disp_0.port1
+HEX0[7] <= seg_disp:seg_disp_0.port1
+HEX1[0] <= seg_disp:seg_disp_1.port1
+HEX1[1] <= seg_disp:seg_disp_1.port1
+HEX1[2] <= seg_disp:seg_disp_1.port1
+HEX1[3] <= seg_disp:seg_disp_1.port1
+HEX1[4] <= seg_disp:seg_disp_1.port1
+HEX1[5] <= seg_disp:seg_disp_1.port1
+HEX1[6] <= seg_disp:seg_disp_1.port1
+HEX1[7] <= seg_disp:seg_disp_1.port1
+HEX2[0] <= seg_disp:seg_disp_2.port1
+HEX2[1] <= seg_disp:seg_disp_2.port1
+HEX2[2] <= seg_disp:seg_disp_2.port1
+HEX2[3] <= seg_disp:seg_disp_2.port1
+HEX2[4] <= seg_disp:seg_disp_2.port1
+HEX2[5] <= seg_disp:seg_disp_2.port1
+HEX2[6] <= seg_disp:seg_disp_2.port1
+HEX2[7] <= seg_disp:seg_disp_2.port1
+HEX3[0] <= seg_disp:seg_disp_3.port1
+HEX3[1] <= seg_disp:seg_disp_3.port1
+HEX3[2] <= seg_disp:seg_disp_3.port1
+HEX3[3] <= seg_disp:seg_disp_3.port1
+HEX3[4] <= seg_disp:seg_disp_3.port1
+HEX3[5] <= seg_disp:seg_disp_3.port1
+HEX3[6] <= seg_disp:seg_disp_3.port1
+HEX3[7] <= seg_disp:seg_disp_3.port1
+HEX4[0] <= seg_disp:seg_disp_4.port1
+HEX4[1] <= seg_disp:seg_disp_4.port1
+HEX4[2] <= seg_disp:seg_disp_4.port1
+HEX4[3] <= seg_disp:seg_disp_4.port1
+HEX4[4] <= seg_disp:seg_disp_4.port1
+HEX4[5] <= seg_disp:seg_disp_4.port1
+HEX4[6] <= seg_disp:seg_disp_4.port1
+HEX4[7] <= seg_disp:seg_disp_4.port1
+HEX5[0] <= seg_disp:seg_disp_5.port1
+HEX5[1] <= seg_disp:seg_disp_5.port1
+HEX5[2] <= seg_disp:seg_disp_5.port1
+HEX5[3] <= seg_disp:seg_disp_5.port1
+HEX5[4] <= seg_disp:seg_disp_5.port1
+HEX5[5] <= seg_disp:seg_disp_5.port1
+HEX5[6] <= seg_disp:seg_disp_5.port1
+HEX5[7] <= seg_disp:seg_disp_5.port1
 KEY[0] => KEY[0].IN1
 KEY[1] => KEY[1].IN1
-LEDR[0] << control_top:control_top.port8
-LEDR[1] << control_top:control_top.port8
-LEDR[2] << control_top:control_top.port8
-LEDR[3] << control_top:control_top.port8
-LEDR[4] << control_top:control_top.port8
-LEDR[5] << control_top:control_top.port8
-LEDR[6] << control_top:control_top.port8
-LEDR[7] << control_top:control_top.port8
-LEDR[8] << control_top:control_top.port8
-LEDR[9] << sig_control:sig_control.port3
+LEDR[0] <= control_top:control_top.port8
+LEDR[1] <= control_top:control_top.port8
+LEDR[2] <= control_top:control_top.port8
+LEDR[3] <= control_top:control_top.port8
+LEDR[4] <= control_top:control_top.port8
+LEDR[5] <= control_top:control_top.port8
+LEDR[6] <= control_top:control_top.port8
+LEDR[7] <= control_top:control_top.port8
+LEDR[8] <= control_top:control_top.port8
+LEDR[9] <= sig_control:sig_control.port3
 iRx_serial => rx_in.IN1
-oTx_Serial << uart_top:uart_top.port3
-clk_1hz << sig_control:sig_control.port4
-xor_tot << memories:memories.port5
-xor_tot2 << xor_tot2.DB_MAX_OUTPUT_PORT_TYPE
+oTx_Serial <= uart_top:uart_top.port3
+clk_1hz <= sig_control:sig_control.port4
+xor_tot <= memories:memories.port5
+xor_tot2 <= xor_tot2.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |PE_FPGA_top|memories:memories
@@ -1484,14 +1516,14 @@ rst => svn_seg_0[1]~reg0.ENA
 rst => svn_seg_0[2]~reg0.ENA
 rst => svn_seg_0[3]~reg0.ENA
 rx_ready => rx_ready_flag.OUTPUTSELECT
-rx_data[0] => ~NO_FANOUT~
-rx_data[1] => ~NO_FANOUT~
-rx_data[2] => ~NO_FANOUT~
-rx_data[3] => ~NO_FANOUT~
-rx_data[4] => ~NO_FANOUT~
-rx_data[5] => ~NO_FANOUT~
-rx_data[6] => ~NO_FANOUT~
-rx_data[7] => ~NO_FANOUT~
+rx_data[0] => Add0.IN16
+rx_data[1] => Add0.IN15
+rx_data[2] => Add0.IN14
+rx_data[3] => Add0.IN13
+rx_data[4] => Add0.IN12
+rx_data[5] => Add0.IN11
+rx_data[6] => Add0.IN10
+rx_data[7] => Add0.IN9
 tx_busy => always1.IN1
 tx_busy => Selector1.IN3
 tx_busy => Selector2.IN1
@@ -1578,6 +1610,66 @@ seven_seg_out[7] <= <GND>
 
 
 |PE_FPGA_top|seg_disp:seg_disp_1
+val_in[0] => Decoder0.IN3
+val_in[1] => Decoder0.IN2
+val_in[2] => Decoder0.IN1
+val_in[3] => Decoder0.IN0
+seven_seg_out[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[7] <= <GND>
+
+
+|PE_FPGA_top|seg_disp:seg_disp_2
+val_in[0] => Decoder0.IN3
+val_in[1] => Decoder0.IN2
+val_in[2] => Decoder0.IN1
+val_in[3] => Decoder0.IN0
+seven_seg_out[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[7] <= <GND>
+
+
+|PE_FPGA_top|seg_disp:seg_disp_3
+val_in[0] => Decoder0.IN3
+val_in[1] => Decoder0.IN2
+val_in[2] => Decoder0.IN1
+val_in[3] => Decoder0.IN0
+seven_seg_out[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[7] <= <GND>
+
+
+|PE_FPGA_top|seg_disp:seg_disp_4
+val_in[0] => Decoder0.IN3
+val_in[1] => Decoder0.IN2
+val_in[2] => Decoder0.IN1
+val_in[3] => Decoder0.IN0
+seven_seg_out[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+seven_seg_out[7] <= <GND>
+
+
+|PE_FPGA_top|seg_disp:seg_disp_5
 val_in[0] => Decoder0.IN3
 val_in[1] => Decoder0.IN2
 val_in[2] => Decoder0.IN1

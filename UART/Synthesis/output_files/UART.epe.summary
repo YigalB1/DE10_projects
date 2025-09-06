@@ -1,0 +1,7 @@
+Early Power Estimator File Generator Status : Successful - Tue Jun 10 06:46:10 2025
+Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+Revision Name : UART
+Top-level Entity Name : UART_top
+Family : MAX 10
+Device : 10M50DAF484C6GES
+Power Estimation Confidence : Low: user provided insufficient toggle rate data
