@@ -1,4 +1,19 @@
 
+State Machine - |PE_FPGA_top|control_top:control_top|uart_tst:uart_tst|state
+Name state.STATE11 state.STATE10 state.STATE9 state.STATE8 state.STATE7 state.STATE6 state.STATE5 state.STATE4 state.STATE3 state.STATE2 state.STATE1 state.STATE0 
+state.STATE0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.STATE1 0 0 0 0 0 0 0 0 0 0 1 1 
+state.STATE2 0 0 0 0 0 0 0 0 0 1 0 1 
+state.STATE3 0 0 0 0 0 0 0 0 1 0 0 1 
+state.STATE4 0 0 0 0 0 0 0 1 0 0 0 1 
+state.STATE5 0 0 0 0 0 0 1 0 0 0 0 1 
+state.STATE6 0 0 0 0 0 1 0 0 0 0 0 1 
+state.STATE7 0 0 0 0 1 0 0 0 0 0 0 1 
+state.STATE8 0 0 0 1 0 0 0 0 0 0 0 1 
+state.STATE9 0 0 1 0 0 0 0 0 0 0 0 1 
+state.STATE10 0 1 0 0 0 0 0 0 0 0 0 1 
+state.STATE11 1 0 0 0 0 0 0 0 0 0 0 1 
+
 State Machine - |PE_FPGA_top|memories:memories|current_state
 Name current_state.STATE7 current_state.STATE6 current_state.STATE5 current_state.STATE4 current_state.STATE3 current_state.STATE2 current_state.STATE1 current_state.STATE0 current_state.STATE8 
 current_state.STATE0 0 0 0 0 0 0 0 0 0 

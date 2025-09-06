@@ -25,15 +25,11 @@ vsim -L altera_mf -L altera_lnsim work.PE2526_tb
 # Optional: Add waveforms
 # add wave -r *
 add wave -label clk sim:/PE2526_tb/clk
-#add wave -label key sim:/PE2526_tb/key
+add wave -label key sim:/PE2526_tb/key
+add wave -radix bin -label por_reset sim:/PE2526_tb/DUT/sig_control/por_reset
+add wave -radix bin -label rst sim:/PE2526_tb/DUT/sig_control/rst
+
 add wave -label reset sim:/PE2526_tb/DUT/reset
-#add wave -radix hex -label current_state sim:/PE2526_tb/DUT/memories/current_state
-#add wave -radix hex -label next_state sim:/PE2526_tb/DUT/memories/next_state
-#add wave -radix hex -label addr sim:/PE2526_tb/DUT/memories/addr
-#add wave -radix hex -label din sim:/PE2526_tb/DUT/memories/din
-#add wave -radix hex -label dout sim:/PE2526_tb/DUT/memories/dout1
-#add wave -radix bin -label we sim:/PE2526_tb/DUT/memories/we1
-#add wave -radix bin -label init sim:/PE2526_tb/DUT/memories/init
 add wave -radix hex -label state sim:/PE2526_tb/DUT/control_top/uart_tst/state
 add wave -radix hex -label next_state sim:/PE2526_tb/DUT/control_top/uart_tst/next_state
 
@@ -49,6 +45,13 @@ add wave -radix bin -label tx         sim:/PE2526_tb/DUT/uart_top/tx/tx
 add wave -radix bin -label receiving  sim:/PE2526_tb/DUT/uart_top/rx/receiving
 add wave -radix hex -label rx_data sim:/PE2526_tb/DUT/control_top/uart_tst/rx_data
 add wave -radix bin -label data_ready sim:/PE2526_tb/DUT/uart_top/rx/data_ready
+add wave -radix hex -label HEX0 sim:/PE2526_tb/DUT/HEX0
+add wave -radix hex -label val_in sim:/PE2526_tb/DUT/seg_disp_0/val_in
+add wave -radix hex -label seven_seg_out sim:/PE2526_tb/DUT/seg_disp_0/seven_seg_out
+add wave -radix hex -label HEX1 sim:/PE2526_tb/DUT/HEX1
+add wave -radix hex -label val_in sim:/PE2526_tb/DUT/seg_disp_0/val_in
+add wave -radix hex -label seven_seg_out sim:/PE2526_tb/DUT/seg_disp_1/seven_seg_out
+
 
 #add wave -radix hex -label tx sim:/PE2526_tb/DUT/oTx_Serial
 #add wave -radix hex -label rx_in sim:/PE2526_tb/DUT/rx_in
@@ -66,5 +69,7 @@ add wave -radix bin -label data_ready sim:/PE2526_tb/DUT/uart_top/rx/data_ready
 run -all
 
 wave zoom full
+# the range is for selecting a start point
+#wave zoom range 0 1000ns
 wave position 0
 view wave

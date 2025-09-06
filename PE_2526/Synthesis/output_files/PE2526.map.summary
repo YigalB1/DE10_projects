@@ -1,15 +1,15 @@
-Analysis & Synthesis Status : Successful - Sat Aug 30 19:34:23 2025
+Analysis & Synthesis Status : Successful - Sat Sep  6 07:36:27 2025
 Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 Revision Name : PE2526
 Top-level Entity Name : PE_FPGA_top
 Family : MAX 10
-Total logic elements : 332
-    Total combinational functions : 322
-    Dedicated logic registers : 220
-Total registers : 220
-Total pins : 18
+Total logic elements : 1,242
+    Total combinational functions : 837
+    Dedicated logic registers : 926
+Total registers : 926
+Total pins : 34
 Total virtual pins : 0
-Total memory bits : 98,304
+Total memory bits : 112,128
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 0
 UFM blocks : 0

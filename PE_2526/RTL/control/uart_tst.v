@@ -6,7 +6,9 @@ module uart_tst (
     input tx_busy,
     output reg [7:0] tx_data,
     output reg tx_start,
-    input UART_loopback // 0: normal mode, 1: loop back for simulations
+    output reg [3:0] svn_seg_0,
+    output reg [9:0] states_leds
+    //input UART_loopback // 0: normal mode, 1: loop back for simulations
 );
 
     // State encoding
@@ -22,7 +24,11 @@ module uart_tst (
                STATE9 = 4'd9,
                STATE10 = 4'd10,
                STATE11 = 4'd11,
-               STATE12 = 4'd12;
+               STATE12 = 4'd12,
+               STATE13 = 4'd13,
+               STATE14 = 4'd14,
+               STATE15 = 4'd15;
+
 
     reg [3:0] state, next_state;
     reg [7:0] data_to_tx ; // dummy data to transmit on TX and recieve on RX 
@@ -33,22 +39,28 @@ module uart_tst (
 
 
     // State register
-    always @(posedge clk or posedge rst) begin 
+    //always @(posedge clk or posedge rst) begin 
+    always @(posedge clk) begin 
         if (rst) begin
             tx_start <= 1'b0;
             tx_data <= 8'b0;
             rx_ready_flag <= 1'b0;
+            states_leds <= 10'b0; // each led for each status
+            state <= STATE0; // starting state
+            data_to_tx <= 8'd65; // ASCII A
+
+/*
             if (UART_loopback == 1) begin // loop back
                 state <= STATE10; // loop back mode
                 data_to_tx <= 8'h54;
+            end else begin
+                state <= STATE0; // normal mode
+                // Normal mode: recieve byte from host and send it back, incremented by 1    
+                data_to_tx <= 8'd65; // ASCII A
             end
-        else begin
-            state <= STATE0; // normal mode
-            // Normal mode: recieve byte from host and send it back, incremented by 1    
-            data_to_tx <= 8'b0;
-            end
-        end // of if rst
-        else begin
+*/
+
+        end else begin// of of rst
             state <= next_state;
            // Set the flag when rx_ready pulses
             if (rx_ready)
@@ -58,27 +70,45 @@ module uart_tst (
                 // rx_ready was captured, reset the flag
                 rx_ready_flag <= 1'b0;
 
-            if (state == STATE0) begin // wait for recieved byte
+
+            // Work on states
+
+            if (state == STATE0) begin // Send one byte to host
+                tx_start <= 1'b1;
+                tx_data <= data_to_tx;
+                states_leds[0] <= 1'b1; // indicate we are in state 0
+            end
+            if (state == STATE1) begin  // wait for tx to be finished
+                                        // Clear the start signal after one cycle
                 tx_start <= 1'b0;
-                tx_data <= 8'b0;
-                data_to_tx <= data_to_tx;
+                data_to_tx <= data_to_tx+8'b1; // increment the data to transmit next time
+                svn_seg_0 <= 4'hA; // display A on 7 seg
+                states_leds[1] <= 1'b1; // indicate we are in state 1
             end
-            else if (state == STATE1) begin // prep next send and wait for TX ready
-                tx_start <= 1'b0;
-                tx_data <= rx_data+8'b1; // increment the received byte, as a check measure
-                data_to_tx <= data_to_tx;
+            else if (state == STATE2) begin // wait for rx data ready
+                svn_seg_0 <= 4'hB; // display B on 7 seg
+                states_leds[2] <= 1'b1; // indicate we are in state 2   
             end
-            else if (state == STATE2) begin // start transmitting
-                tx_start <= 1'b1; // start transmitting
-                data_to_tx <= data_to_tx;
-            end
-            else if (state == STATE3) begin // transmitting
-                tx_start <= 1'b0; //  transmitting
-                data_to_tx <= data_to_tx;
+            else if (state == STATE3) begin //wait here
+                states_leds[3] <= 1'b1; // indicate we are in state 0   
             end
             else if (state == STATE4) begin // wait for tranmit end
-                tx_start <= 1'b0;
-                data_to_tx <= data_to_tx;
+                states_leds[4] <= 1'b1; // indicate we are in state 3   
+            end
+            else if (state == STATE5) begin // wait for tranmit end
+                states_leds[5] <= 1'b1; // indicate we are in state 4   
+            end
+            else if (state == STATE6) begin // wait for tranmit end
+                states_leds[6] <= 1'b1; // indicate we are in state 5   
+            end
+            else if (state == STATE7) begin // wait for tranmit end
+                states_leds[7] <= 1'b1; // indicate we are in state 6   
+            end
+            else if (state == STATE8) begin // wait for tranmit end
+                states_leds[8] <= 1'b1; // indicate we are in state 7   
+            end
+            else if (state == STATE9) begin // wait for tranmit end
+                states_leds[9] <= 1'b1; // indicate we are in state 8
             end
             else if (state == STATE10) begin // Lopp back mode, send one
                 data_to_tx <= data_to_tx+8'b1;
@@ -87,8 +117,6 @@ module uart_tst (
             end
             else if (state == STATE11) begin // data sent, wait for it to be sent and recieved in rx
                 tx_start <= 1'b0;
-                data_to_tx <= data_to_tx;
-                tx_data <= tx_data; // hold value
             end
 
 
@@ -102,26 +130,25 @@ module uart_tst (
         next_state = state;
         case (state)
             STATE0: begin  // wait for Rx data ready
-                //if (~rx_ready)
-                if (~rx_ready_flag)
-                    next_state = STATE0;
-                else 
-                    next_state = STATE1;
+                next_state = STATE1;
+                    
             end
-            STATE1: begin  // prepare data to transmit
-                next_state = STATE2;
+            STATE1: begin  // wait for TX to end
+               if (tx_busy)
+                    next_state = STATE1; // wait here if busy
+                else 
+                    next_state = STATE2; // start again
             end
             STATE2: begin  // Start transmit
-                next_state = STATE3;
+                if (~rx_ready_flag)
+                    next_state = STATE2;
+                else 
+                    next_state = STATE3;
             end
             STATE3: begin  // disable write to tx_uart
-                next_state = STATE4;
+                next_state = STATE0;
             end
             STATE4: begin //  wait for TX ready
-                if (tx_busy)
-                    next_state = STATE4; // wait here if busy
-                else 
-                    next_state = STATE0; // start again
                 end
             
             STATE9: begin // wait for data to be sent

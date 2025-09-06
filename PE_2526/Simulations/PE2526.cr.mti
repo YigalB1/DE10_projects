@@ -1,44 +1,9 @@
-C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/control/control_top.v {1 {vlog -work work -stats=none C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/control/control_top.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module control_top
-
-Top level modules:
-	control_top
-
-} {} {}} {C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/uart_top.v} {1 {vlog -work work -stats=none {C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/uart_top.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module uart_top
-
-Top level modules:
-	uart_top
-
-} {} {}} C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/control/uart_tst.v {1 {vlog -work work -stats=none C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/control/uart_tst.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module uart_tst
-
-Top level modules:
-	uart_tst
-
-} {} {}} {C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/rx.v} {1 {vlog -work work -stats=none {C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/rx.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module rx
-
-Top level modules:
-	rx
-
-} {} {}} C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Testbench/PE2526_tb.v {1 {vlog -work work -stats=none {C:\Users\DNLD\Documents\Projects\DE10_projects\PE_2526\Testbench\PE2526_tb.v}
+C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Testbench/PE2526_tb.v {1 {vlog -work work -stats=none C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Testbench/PE2526_tb.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module PE2526_tb
 
 Top level modules:
 	PE2526_tb
-
-} {} {}} {C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/tx.v} {1 {vlog -work work -stats=none {C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/tx.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module tx
-
-Top level modules:
-	tx
 
 } {} {}} C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/sig_control.v {1 {vlog -work work -stats=none C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/sig_control.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -47,11 +12,32 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	sig_control
 
-} {} {}} C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v {1 {vlog -work work -stats=none C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v
+} {} {}} {C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/uart_top.v} {1 {vlog -work work -stats=none {C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/uart_top.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module PE_FPGA_top
+-- Compiling module uart_top
 
 Top level modules:
-	PE_FPGA_top
+	uart_top
+
+} {} {}} {C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/rx.v} {1 {vlog -work work -stats=none {C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/rx.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module rx
+
+Top level modules:
+	rx
+
+} {} {}} {C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/tx.v} {1 {vlog -work work -stats=none {C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/tx.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tx
+
+Top level modules:
+	tx
+
+} {} {}} C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/seg_disp.v {1 {vlog -work work -stats=none C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/seg_disp.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module seg_disp
+
+Top level modules:
+	seg_disp
 
 } {} {}}

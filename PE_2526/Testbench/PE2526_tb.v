@@ -10,17 +10,19 @@ wire oTx_Serial;
 wire clk_1hz;
 wire xor_tot;
 wire xor_tot2;
+wire [7:0] HEX0;
+wire [7:0] HEX1;
 
 
   // Testbench signals
   reg clk;
   //reg rst;
-  wire [31:0] memA_out;
-  wire [31:0] memB_out;
-  wire [7:0]  memC_out;
+  //wire [31:0] memA_out;
+  //wire [31:0] memB_out;
+  //wire [7:0]  memC_out;
 
   
-PE_FPGA_top DUT(clk,key,ledr,iRx_serial,oTx_Serial,clk_1hz,xor_tot,xor_tot2);
+PE_FPGA_top DUT(clk,HEX0,HEX1,key,ledr,iRx_serial,oTx_Serial,clk_1hz,xor_tot,xor_tot2);
 
 
   // Clock generation: 10ns period (100MHz)
@@ -38,7 +40,11 @@ PE_FPGA_top DUT(clk,key,ledr,iRx_serial,oTx_Serial,clk_1hz,xor_tot,xor_tot2);
 
     key[0] = 1; // Key generats the reset. 1 is not pressed, no reset
     key[1] = 0; // not really needed
-    iRx_serial = 1; // idle state for UART RX
+    // iRx_serial = 1; // idle state for UART RX
+    assign iRx_serial = oTx_Serial; // loopback for testing
+
+    
+    
     repeat (2) @(posedge clk);
     // Initialize reset
     key[0] = 0;

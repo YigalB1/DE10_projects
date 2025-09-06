@@ -30,13 +30,13 @@ Z4 !s108 1756138551.000000
 Z5 o-work work
 Z6 tCvgOpt 0
 vcontrol_top
-Z7 !s110 1756536914
+Z7 !s110 1757072153
 !i10b 1
-!s100 z1VhURNUA:VK2SIH7BI8G1
-I9N`mL_fd?Nk8K2I`TCnAE2
+!s100 6_FI:96amMjZ]c>WgaBkK2
+IljHJSaglg;Ie^4O<U_Ej[0
 R1
 R2
-w1756375156
+w1757060528
 8C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/control/control_top.v
 FC:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/control/control_top.v
 L0 1
@@ -44,7 +44,7 @@ R3
 r1
 !s85 0
 31
-Z8 !s108 1756536914.000000
+Z8 !s108 1757072153.000000
 !s107 C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/control/control_top.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/control/control_top.v|
 !i113 1
@@ -134,21 +134,21 @@ R6
 vPE2526_tb
 R7
 !i10b 1
-!s100 QSV1K`ojc@YkOH6^jlQdS1
-IF;lROH`n[VnG:]]2Mf_e_1
+!s100 MjJ`=^e37^8AT?ann1@4[2
+IBJgm=K3zZ?h>>R=4[6B900
 R1
 R2
-w1756534526
-8C:\Users\DNLD\Documents\Projects\DE10_projects\PE_2526\Testbench\PE2526_tb.v
-FC:\Users\DNLD\Documents\Projects\DE10_projects\PE_2526\Testbench\PE2526_tb.v
+w1757072015
+Z17 8C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Testbench/PE2526_tb.v
+Z18 FC:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Testbench/PE2526_tb.v
 L0 3
 R3
 r1
 !s85 0
 31
 R8
-!s107 C:\Users\DNLD\Documents\Projects\DE10_projects\PE_2526\Testbench\PE2526_tb.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\DNLD\Documents\Projects\DE10_projects\PE_2526\Testbench\PE2526_tb.v|
+Z19 !s107 C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Testbench/PE2526_tb.v|
+Z20 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Testbench/PE2526_tb.v|
 !i113 1
 R5
 R6
@@ -156,11 +156,11 @@ n@p@e2526_tb
 vPE_FPGA_top
 R7
 !i10b 1
-!s100 In0B83`]:[3ZY;PZYhzWO0
-I3Bil=@=Om]Wb1MhSm9`TN2
+!s100 IC;D3a@gU6D=>3R0S@UV>0
+IS?CPU1A]E9:`FN6_VQOR=1
 R1
 R2
-w1756408720
+w1757072091
 8C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v
 FC:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/PE_FPGA_top.v
 L0 3
@@ -204,27 +204,48 @@ InOjnR>A2^d;;k`2^iEZUz1
 R1
 R2
 w1756536873
-Z17 8C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/rx.v
-Z18 FC:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/rx.v
+Z21 8C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/rx.v
+Z22 FC:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/rx.v
 L0 1
 R3
 r1
 !s85 0
 31
 R8
-Z19 !s107 C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/rx.v|
-Z20 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/rx.v|
+Z23 !s107 C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/rx.v|
+Z24 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/rx.v|
+!i113 1
+R5
+R6
+vseg_disp
+!s110 1757072154
+!i10b 1
+!s100 V0g4WAT7zWchmgbicNLdz0
+I;oiBS0MRc77KSO0S=jk3:3
+R1
+R2
+w1757061996
+8C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/seg_disp.v
+FC:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/seg_disp.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1757072154.000000
+!s107 C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/seg_disp.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/seg_disp.v|
 !i113 1
 R5
 R6
 vsig_control
 R7
 !i10b 1
-!s100 Qh[j`^9@7bChB`_nXhbYk0
-I<kA2WFzk:ihDSVZS4b8m[0
+!s100 aWjWX:j5z82J0k?KUd0K90
+I^MEa^dDZMgVYd6HDDCPQ01
 R1
 R2
-w1756228898
+w1756660957
 8C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/sig_control.v
 FC:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/sig_control.v
 L0 6
@@ -246,16 +267,16 @@ IhODF64Ke=^9mBDbFcWfJ`2
 R1
 R2
 w1755712819
-Z21 8C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Testbench/PE2526_tb.v
-Z22 FC:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Testbench/PE2526_tb.v
+R17
+R18
 L0 3
 R3
 r1
 !s85 0
 31
 !s108 1755713868.000000
-Z23 !s107 C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Testbench/PE2526_tb.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Testbench/PE2526_tb.v|
+R19
+R20
 !i113 1
 R5
 R6
@@ -267,37 +288,37 @@ IcgWV6LTXcSX3bU<5g1lfS0
 R1
 R2
 w1755713964
-R21
-R22
+R17
+R18
 L0 3
 R3
 r1
 !s85 0
 31
 !s108 1755715438.000000
-R23
+R19
 !s90 -reportprogress|300|C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/Testbench/PE2526_tb.v|
 !i113 1
 R6
 ntb_@p@e2526
 vtx
-!s110 1756536915
+R7
 !i10b 1
 !s100 UfjGV7NjBm]70L[jn;^Jo3
 IHFbKSEWm`8MH3?mO7eW3I1
 R1
 R2
 w1756402711
-Z24 8C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/tx.v
-Z25 FC:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/tx.v
+Z25 8C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/tx.v
+Z26 FC:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/tx.v
 L0 1
 R3
 r1
 !s85 0
 31
-!s108 1756536915.000000
-!s107 C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/tx.v|
-Z26 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/tx.v|
+R8
+Z27 !s107 C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/tx.v|
+Z28 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/tx.v|
 !i113 1
 R5
 R6
@@ -373,16 +394,16 @@ IzDC]_oBBA?Tna5I^NClJW0
 R1
 R2
 w1755955881
-R17
-R18
+R21
+R22
 L0 1
 R3
 r1
 !s85 0
 31
 R10
-R19
-R20
+R23
+R24
 !i113 1
 R5
 R6
@@ -432,11 +453,11 @@ R6
 vuart_tst
 R7
 !i10b 1
-!s100 3]^I_R]b53=If^<[@@:N92
-IgX=BXVK27]Ll4O=HBQ[b`1
+!s100 1?>8_oHDm>APFaZ>=e=7P2
+IOM4fmnN8?=`mMado5[LWY0
 R1
 R2
-w1756527085
+w1757071201
 8C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/control/uart_tst.v
 FC:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/control/uart_tst.v
 L0 1
@@ -458,16 +479,16 @@ I?Qc07FVg>egiK=SOZNXi70
 R1
 R2
 w1755956002
-R24
 R25
+R26
 L0 1
 R3
 r1
 !s85 0
 31
 R10
-!s107 C:/Users/DNLD/Documents/Projects/DE10_projects/PE_2526/RTL/New UART/tx.v|
-R26
+R27
+R28
 !i113 1
 R5
 R6
