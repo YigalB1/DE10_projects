@@ -17,6 +17,7 @@ crash.*.log
 *.tfvars.json
 
 PE_2526/Simulations/
+!PE_2526/Simulations/simulate.do
 PE_2526/Synthesis/
 !PE_2526/Synthesis/PE2526.pin
 7seg/Simulations
